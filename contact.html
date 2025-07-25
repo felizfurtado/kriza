@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - From Heaven Events by Kriza</title>
+     <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Mulish:wght@400;500&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Global Styles */
+      :root {
+        --bg-color: #f2e9eb;
+        --text-color: #545748;
+        --accent-color: #d88c96;
+        --accent-dark: #8c5a60;
+        --leaf-color: #647a6e;
+        --accent-light: #f7e5e8;
+        --leaf-color: #647a6e;
+        --gold: #c6a972;
+        --font-heading: "Playfair Display", serif;
+        --font-body: "Mulish", sans-serif;
+        --font-title: "Great Vibes", cursive;
+        --font-secondary: "Montserrat", sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+      }
+
+      /* Navigation Styles */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        border-bottom: 1px solid #eae7df;
+        position: sticky;
+        top: 0;
+        background-color: var(--bg-color);
+        z-index: 100;
+        flex-wrap: wrap;
+      }
+
+      .nav-group {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: var(--text-color);
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--accent-color);
+      }
+
+      .logo {
+        font-family: var(--font-heading);
+        font-size: 28px;
+        letter-spacing: 2px;
+        order: 2;
+        color: var(--accent-dark);
+      }
+
+      .hamburger {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        order: 1;
+      }
+
+      .nav-left {
+        order: 1;
+      }
+
+      .nav-right {
+        order: 3;
+      }
+
+
+      /* Contact Hero Section */
+      .contact-hero {
+        height: 400px;
+        position: relative;
+        background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');
+        background-size: cover;
+        background-position: center 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+      }
+      
+      .contact-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+      
+      .contact-hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 0 20px;
+        max-width: 800px;
+        color: white;
+      }
+      
+      .contact-hero-content h1 {
+        font-family: var(--font-heading);
+        font-size: 4rem;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+      }
+      
+      .contact-hero-content p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+      
+      .floral-divider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 0;
+      }
+      
+      .floral-divider .floral-icon {
+        width: 50px;
+        margin: 0 15px;
+        opacity: 0.6;
+      }
+      
+      .floral-divider .divider-line {
+        height: 1px;
+        background-color: var(--accent-color);
+        flex-grow: 1;
+        max-width: 200px;
+      }
+      
+      /* Contact Section */
+      .contact-section {
+        padding: 80px 20px;
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
+      .contact-container {
+        display: flex;
+        gap: 60px;
+        flex-wrap: wrap;
+      }
+      
+      .contact-form {
+    flex: 1;
+    min-width: 300px;
+    padding: 60px 30px;
+    border: 2px solid var(--accent-dark);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+
+
+
+
+      
+      .contact-info {
+        flex: 1;
+        min-width: 300px;
+        position: relative;
+      }
+      
+      .section-heading {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      
+      .section-heading h2 {
+        font-family: var(--font-title);
+        font-size: 4.5rem;
+        color: var(--accent-dark);
+        margin-bottom: 10px;
+      }
+      
+      .section-heading p {
+        font-family: var(--font-body);
+        font-size: 1.1rem;
+        color: var(--text-color);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      
+      /* Form Styles */
+      .form-group {
+        margin-bottom: 25px;
+      }
+      
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: var(--accent-dark);
+      }
+      
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: var(--font-body);
+        font-size: 16px;
+        background-color: #fff;
+        transition: all 0.3s ease;
+      }
+      
+      .form-group input:focus,
+      .form-group textarea:focus,
+      .form-group select:focus {
+        border-color: var(--accent-color);
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(216, 140, 150, 0.2);
+      }
+      
+      .form-group textarea {
+        height: 150px;
+        resize: vertical;
+      }
+      
+      .submit-btn {
+        background-color: var(--accent-dark);
+        color: white;
+        border: none;
+        padding: 14px 30px;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-radius: 4px;
+        display: inline-block;
+        width: auto;
+      }
+      
+      .submit-btn:hover {
+        background-color: var(--accent-color);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      
+      /* Contact Info Styles */
+      .info-card {
+        background-color: white;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        position: relative;
+        z-index: 2;
+      }
+      
+      .info-item {
+        display: flex;
+        margin-bottom: 30px;
+      }
+      
+      .info-icon {
+        width: 50px;
+        height: 50px;
+        background-color: rgba(216, 140, 150, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+      }
+      
+      .info-icon i {
+        color: var(--accent-color);
+        font-size: 20px;
+      }
+      
+      .info-content h3 {
+        font-family: var(--font-heading);
+        font-size: 20px;
+        margin-bottom: 5px;
+        color: var(--accent-dark);
+      }
+      
+      .info-content p,
+      .info-content a {
+        color: var(--text-color);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      
+      .info-content a:hover {
+        color: var(--accent-color);
+      }
+      
+      .social-info {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+      
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(216, 140, 150, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+      
+      .social-icon:hover {
+        background-color: var(--accent-color);
+        transform: translateY(-3px);
+      }
+      
+      .social-icon:hover i {
+        color: white;
+      }
+      
+      .social-icon i {
+        color: var(--accent-color);
+        font-size: 18px;
+      }
+      
+      .floral-decoration {
+        position: absolute;
+        opacity: 0.15;
+        z-index: 1;
+      }
+      
+      .floral-1 {
+        width: 200px;
+        top: -50px;
+        left: -50px;
+        transform: rotate(-15deg);
+      }
+      
+      .floral-2 {
+        width: 250px;
+        bottom: -80px;
+        right: -80px;
+        transform: rotate(25deg);
+      }
+      
+      .floral-3 {
+        width: 150px;
+        top: 40%;
+        left: 40%;
+        transform: rotate(90deg);
+        opacity: 0.1;
+      }
+      
+      /* Map Styles */
+      .map-container {
+        margin-top: 50px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        height: 400px;
+        position: relative;
+      }
+      
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+      
+      .map-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(242, 233, 235, 0.2), rgba(242, 233, 235, 0.8));
+        pointer-events: none;
+      }
+      
+      /* FAQ Section */
+      .faq-section {
+        padding: 80px 20px;
+        background-color: rgba(255, 255, 255, 0.5);
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
+      .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      .faq-item {
+        border-bottom: 1px solid #eae7df;
+        padding: 25px 0;
+        cursor: pointer;
+      }
+      
+      .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: var(--font-heading);
+        font-size: 20px;
+        color: var(--accent-dark);
+      }
+      
+      .faq-question i {
+        transition: transform 0.3s ease;
+      }
+      
+      .faq-answer {
+        padding-top: 15px;
+        display: none;
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+      
+      .faq-item.active .faq-answer {
+        display: block;
+      }
+      
+      .faq-item.active .faq-question i {
+        transform: rotate(180deg);
+      }
+      
+      /* Footer Styles */
+      .footer {
+        background-color: #2f3a35;
+        color: #fff;
+        padding: 60px 20px 30px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+      }
+
+      .footer-logo {
+        font-family: var(--font-heading);
+        font-size: 28px;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+      }
+
+      .footer-about p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-link {
+        color: #fff;
+        font-size: 18px;
+        transition: color 0.3s ease;
+      }
+
+      .social-link:hover {
+        color: var(--accent-color);
+      }
+
+      .footer-heading {
+        font-family: var(--font-heading);
+        font-size: 18px;
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 12px;
+      }
+
+      .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 15px;
+      }
+
+      .footer-links a:hover {
+        color: var(--accent-color);
+      }
+
+      .footer-contact p {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 15px;
+      }
+
+      .footer-contact i {
+        margin-right: 10px;
+        color: var(--accent-color);
+        width: 20px;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 40px;
+        margin-top: 40px;
+        border-top: 1px solid #444;
+        font-size: 14px;
+        color: #fff;
+      }
+
+      .footer-floral {
+        position: absolute;
+        opacity: 0.1;
+        z-index: 1;
+      }
+
+      .footer-floral-1 {
+        width: 300px;
+        top: 50px;
+        left: -100px;
+        transform: rotate(-25deg);
+      }
+
+      .footer-floral-2 {
+        width: 250px;
+        bottom: 50px;
+        right: -80px;
+        transform: rotate(25deg);
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 1024px) {
+        .contact-hero-content h1 {
+          font-size: 3.5rem;
+        }
+        
+        .contact-container {
+          gap: 40px;
+        }
+        
+        .section-heading h2 {
+          font-size: 4rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          padding: 15px 20px;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .logo {
+          order: 2;
+          margin: 0 auto;
+          padding: 10px 0;
+        }
+
+        .hamburger {
+          display: block;
+          order: 1;
+          z-index: 20;
+        }
+
+        .nav-group {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background-color: var(--bg-color);
+          flex-direction: column;
+          justify-content: center;
+          gap: 30px;
+          transform: translateY(-100%);
+          transition: transform 0.3s ease-in-out;
+          z-index: 10;
+          padding-top: 80px;
+        }
+
+        .nav-group.show {
+          transform: translateY(0);
+        }
+
+        .nav-left,
+        .nav-right {
+          display: flex;
+        }
+
+        .nav-right {
+          display: none;
+        }
+
+        .nav-left {
+          flex-direction: column;
+        }
+
+        .nav-left .nav-link {
+          font-size: 18px;
+          padding: 10px 0;
+        }
+
+        .contact-hero {
+          height: 350px;
+        }
+        
+        .contact-hero-content h1 {
+          font-size: 2.8rem;
+        }
+        
+        .contact-hero-content p {
+          font-size: 1.1rem;
+        }
+        
+        .section-heading h2 {
+          font-size: 3.5rem;
+        }
+        
+        .section-heading p {
+          font-size: 1rem;
+          padding: 0 20px;
+        }
+        
+        .info-card {
+          padding: 30px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .contact-hero {
+          height: 300px;
+        }
+        
+        .contact-hero-content h1 {
+          font-size: 2.5rem;
+        }
+        
+        .contact-hero-content p {
+          font-size: 1rem;
+        }
+        
+        .floral-divider .divider-line {
+          max-width: 100px;
+        }
+        
+        .section-heading h2 {
+          font-size: 3rem;
+        }
+        
+        .faq-question {
+          font-size: 18px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .contact-hero-content h1 {
+          font-size: 2.2rem;
+        }
+        
+        .info-item {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        
+        .info-icon {
+          margin-bottom: 15px;
+        }
+        
+        .section-heading h2 {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <style>
+        .hha {
+          display: none;
+        }
+
+        /* Show only on mobile */
+        @media (max-width: 768px) {
+          .hha {
+            display: inline-block;
+          }
+        }
+      </style>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars" id="menuIcon"></i>
+        <i class="fa-solid fa-xmark" id="closeIcon" style="display: none"></i>
+      </div>
+
+      <div class="nav-group nav-left">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="portfolio.html" class="nav-link hha">Portfolio</a>
+        <a href="gallery.html" class="nav-link hha">Gallery</a>
+        <a href="contact.html" class="nav-link hha">Contact</a>
+      </div>
+
+      <div class="logo">KRIZA</div>
+
+      <div class="nav-group nav-right">
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <script>
+        function toggleMenu() {
+          const navLeft = document.querySelector(".nav-left");
+          const body = document.body;
+          const menuIcon = document.getElementById("menuIcon");
+          const closeIcon = document.getElementById("closeIcon");
+
+          navLeft.classList.toggle("show");
+
+          if (navLeft.classList.contains("show")) {
+            body.style.overflow = "hidden";
+            menuIcon.style.display = "none";
+            closeIcon.style.display = "block";
+          } else {
+            body.style.overflow = "";
+            menuIcon.style.display = "block";
+            closeIcon.style.display = "none";
+          }
+        }
+      </script>
+    </div>
+
+    <!-- Contact Hero Section -->
+    <!-- <section class="contact-hero">
+      <div class="contact-hero-content">
+        <h1>Let's Create Your Dream Event</h1>
+        <p>Reach out to us for personalized wedding planning and styling services</p>
+      </div>
+    </section> -->
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="section-heading">
+        <h2>Get in Touch</h2>
+        <p>We'd love to hear about your vision and help bring it to life</p>
+      </div>
+      
+      <div class="contact-container">
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+            </div>
+            
+            <div class="form-group">
+              <label for="event">Event Type</label>
+              <select id="event" name="event">
+                <option value="">Select event type</option>
+                <option value="wedding">Wedding</option>
+                <option value="engagement">Engagement</option>
+                <option value="reception">Reception</option>
+                <option value="proposal">Proposal</option>
+                <option value="other">Other Celebration</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="date">Event Date</label>
+              <input type="date" id="date" name="date">
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" placeholder="Tell us about your dream event..." required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+        
+        <div class="contact-info">
+          <div class="info-card">
+            <div class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="info-content">
+                <h3>Our Location</h3>
+                <p>Goa & Karwar (Available Pan-India)</p>
+              </div>
+            </div>
+            
+            <div class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="info-content">
+                <h3>Call Us</h3>
+                <p><a href="tel:+916360479875">+91 63604 79875</a></p>
+              </div>
+            </div>
+            
+            <div class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="info-content">
+                <h3>Email Us</h3>
+                <p><a href="mailto:fromheaven.kriza@gmail.com">fromheaven.kriza@gmail.com</a></p>
+              </div>
+            </div>
+            
+            <div class="info-item">
+              <div class="info-icon">
+                <i class="fab fa-instagram"></i>
+              </div>
+              <div class="info-content">
+                <h3>Follow Us</h3>
+                <p><a href="https://instagram.com/fromheaven_events_bykriza" target="_blank">@fromheaven_events_bykriza</a></p>
+                <div class="social-info">
+                  <a href="https://instagram.com/fromheaven_events_bykriza" class="social-icon" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="#" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#" class="social-icon">
+                    <i class="fab fa-pinterest"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+
+      
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30758.146819708887!2d73.77368565697608!3d15.498999069989977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfc0b9d7d7d7a5%3A0x4a2b0e8e5c5c5c5c!2sGoa!5e0!3m2!1sen!2sin!4v1684833621886!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+        <div class="map-overlay"></div>
+      </div>
+    </section>
+    
+    <!-- FAQ Section -->
+<section class="faq-section">
+  <div class="section-heading">
+    <h2>Frequently Asked Questions</h2>
+    <p>Get quick answers to the most common questions about our wedding and event planning services.</p>
+  </div>
+
+  <div class="faq-container">
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="faq-question">
+        How far in advance should I book your services?
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        Ideally, we recommend booking 6–12 months in advance for weddings—especially during the busy season. For smaller events, 3–6 months is usually perfect. But even if it’s last-minute, reach out! We might still have availability.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="faq-question">
+        Do you handle destination weddings outside of Goa?
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        Absolutely! We love planning destination weddings all over India—and even abroad. From Rajasthan to Kerala to dreamy international locations, we’ll bring your vision to life wherever you are.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="faq-question">
+        What is included in your wedding planning packages?
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        Our packages are flexible and tailored to your needs. They range from full-service planning to partial coordination and always include vendor management, timeline creation, and day-of coordination. Full-service packages also include design, budgeting, and unlimited consultations.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="faq-question">
+        Can you work within my budget?
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        Yes, absolutely. We’re pros at creating magic within all kinds of budgets. During our first consultation, we’ll understand your vision and help you make the most of your resources—without compromising on style or experience.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="faq-question">
+        Do you offer floral and decor services?
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        Definitely! Floral and décor are at the heart of what we do. We design everything—from custom floral arrangements to stunning installations—to match your theme and aesthetic beautifully.
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <br>
+    <br>
+    <br>
+
+    <footer class="footer">
+      <img src="pngwing.com (5).png" alt="Floral decoration" class="footer-floral footer-floral-1">
+      <img src="pngwing.com (6).png" alt="Floral decoration" class="footer-floral footer-floral-2">
+      
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo">KRIZA</div>
+          <p>Creating unforgettable weddings and events with passion and attention to detail. Specializing in luxury celebrations across India & beyond</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links-container">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-services">
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-links">
+            <li><a href="#">Wedding Planning</a></li>
+            <li><a href="#">Event Design</a></li>
+            <li><a href="#">Destination Weddings</a></li>
+            <li><a href="#">Floral Design</a></li>
+            <li><a href="#">Full Coordination</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3 class="footer-heading">Contact Us</h3>
+          <p><i class="fas fa-map-marker-alt"></i>Goa & Karwar (Available Pan-India)</p>
+          <p><i class="fas fa-phone"></i> +91 63604 79875</p>
+          <p><i class="fas fa-envelope"></i> fromheaven.kriza@gmail.com</p>
+          <p><i class="fab fa-instagram"></i> @fromheaven_events_bykriza</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 From Heaven Events By Kriza. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+
+      
+      function toggleFAQ(item) {
+        item.classList.toggle("active");
+      }
+      
+      // Form submission handler
+      document.getElementById("contactForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        
+        // Show confirmation message (in a real implementation, this would send to a server)
+        alert(`Thank you, ${name}! Your message has been sent. We'll contact you at ${email} shortly.`);
+        
+        // Reset form
+        this.reset();
+      });
+      
+      // Add GSAP animations
+      
+    
+    </script>
+
+    <!-- Add GSAP library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script>
+      // Register GSAP plugins
+      gsap.registerPlugin(ScrollTrigger);
+    </script>
+  </body>
+</html>

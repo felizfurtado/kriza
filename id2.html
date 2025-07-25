@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luxury Weddings & Parties</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Mulish:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap"
+      rel="stylesheet"
+    />
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+
+
+    <style>
+      :root {
+        --bg-color: #f2e9eb;
+        --text-color: #545748;
+        --accent-color: #d88c96;
+        --accent-dark: #8c5a60;
+        --leaf-color: #647a6e;
+        --font-heading: "Playfair Display", serif;
+        --font-body: "Mulish", sans-serif;
+        --font-title: "Great Vibes", cursive;
+
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background-color: var(--bg-color);
+        color: var(--text-color);
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        border-bottom: 1px solid #eae7df;
+        position: sticky;
+        top: 0;
+        background-color: var(--bg-color);
+        z-index: 10;
+        flex-wrap: wrap;
+      }
+
+      .nav-group {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: var(--text-color);
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--accent-color);
+      }
+
+      .logo {
+        font-family: var(--font-heading);
+        font-size: 22px;
+        letter-spacing: 2px;
+        order: 2;
+      }
+
+      .hamburger {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        order: 1;
+      }
+
+      .nav-left {
+        order: 1;
+      }
+
+      .nav-right {
+        order: 3;
+      }
+
+      .hero-section {
+        display: flex;
+        width: 100%;
+        height: 80vh;
+        position: relative;
+      }
+
+      .hero-image-wrapper {
+        flex: 1;
+        padding: 15px;
+        overflow: hidden;
+      }
+
+      .hero-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .hero-box {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 60px 150px;
+        background-color: #fffafa;
+        text-align: center;
+        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.06);
+        max-width: 95%;
+        /* z-index: 5; */
+      }
+
+      .hero-box p {
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        color: #555;
+      }
+
+      .hero-box h1 {
+        font-family: var(--font-heading);
+        /* color: var(--accent-dark); */
+        font-size: 56px;
+        line-height: 1.3;
+        margin-bottom: 12px;
+      }
+
+      .hero-box span {
+        font-size: 15px;
+        color: #8a7d74;
+      }
+
+      .flower {
+        width: 500px;
+        position: absolute;
+        top: 62%;
+        left: 0%;
+        z-index: 5;
+      }
+      .flower2 {
+        width: 500px;
+        position: absolute;
+        top: 62%;
+        right: 0%;
+        z-index: 5;
+      }
+
+      
+
+      @media (max-width: 768px) {
+        .navbar {
+          padding: 15px 20px;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .logo {
+          order: 2;
+          margin: 0 auto;
+          padding: 10px 0;
+        }
+
+        .hamburger {
+          display: block;
+          order: 1;
+          z-index: 20;
+        }
+
+        .nav-group {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background-color: var(--bg-color);
+          flex-direction: column;
+          justify-content: center;
+          gap: 30px;
+          transform: translateY(-100%);
+          transition: transform 0.3s ease-in-out;
+          z-index: 10;
+          padding-top: 80px;
+        }
+
+        .nav-group.show {
+          transform: translateY(0);
+        }
+
+        .nav-left,
+        .nav-right {
+          display: flex;
+        }
+
+        .nav-right {
+          display: none;
+        }
+
+        .nav-left {
+          flex-direction: column;
+        }
+
+        .nav-left .nav-link {
+          font-size: 18px;
+          padding: 10px 0;
+        }
+
+        .hero-section {
+          flex-direction: row;
+          flex-wrap: nowrap;
+          height: 400px;
+        }
+
+        .hero-image-wrapper {
+          flex: 0 0 33.33%;
+          padding: 3px;
+          height: 80%;
+        }
+
+        .hero-image-wrapper img {
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .hero-box {
+          top: 100%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 20px 15px;
+          width: 90vw;
+          max-width: 100%;
+          z-index: 1;
+        }
+
+        .hero-box h1 {
+          font-size: 40px;
+        }
+
+        .hero-box img.flower {
+          width: 10px;
+        }
+        .flower,
+        .flower2 {
+          width: 250px;
+          top: 115%;
+          z-index: 5;
+        }
+
+      
+
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div class="nav-group nav-left">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">About</a>
+        <a href="#" class="nav-link">Services</a>
+      </div>
+      <div class="logo">LOVIO</div>
+      <div class="nav-group nav-right">
+        <a href="#" class="nav-link">Portfolio</a>
+        <a href="#" class="nav-link">Contact</a>
+        <a href="#" class="nav-link">Gallery</a>
+      </div>
+    </div>
+
+    <section class="hero-section">
+      <div class="hero-image-wrapper">
+        <img
+          src="https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610b4126a35dd31cb8da134d_home_a1.jpg"
+          alt="Wedding party image"
+          loading="lazy"
+        />
+      </div>
+      <div class="hero-image-wrapper">
+        <img
+          src="https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610b4126b00a600bfdb60d4b_home_a2.jpg"
+          alt="Wedding decoration image"
+          loading="lazy"
+        />
+      </div>
+      <div class="hero-image-wrapper">
+        <img
+          src="https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610b412633b829429dbd6b27_home_a3.jpg"
+          alt="Wedding celebration image"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="hero-box">
+        <p>Personally tailored for you</p>
+        <h1>Luxury Weddings<br />& Parties</h1>
+        <span>India & Europe</span>
+        <div></div>
+      </div>
+      <img src="pngwing.com (5).png" alt="Flower icon" class="flower2" />
+      <img src="pngwing.com (5).png" alt="Flower icon" class="flower" />
+    </section>
+
+<style>
+.quote-section {
+  background-color: var(--bg-color);
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.quote-box {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Floating Floral Elements */
+.floral-decoration {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.floral-1 {
+  width: 250px;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+  transform: rotate(-155deg);
+}
+
+.floral-2 {
+  width: 350px;
+  bottom: 15%;
+  right: 8%;
+  animation-delay: 1s;
+  transform: rotate(25deg);
+}
+
+
+
+.floral-4 {
+  width: 80px;
+  bottom: 0%;
+  opacity: 0.55;
+  left: 48%;
+  transform: rotate(90deg);
+  /* display: none; */
+
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(var(--initial-rotation));
+  }
+  50% {
+    transform: translateY(-20px) rotate(var(--initial-rotation));
+  }
+}
+
+.quote-heading {
+  font-family: "Marcellus", serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+  margin-bottom: 30px;
+  color: var(--accent-dark);
+
+  position: relative;
+}
+
+.quote-subtext {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  color: var(--text-color);
+  line-height: 1.8;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quote-signature {
+  font-size: clamp(2rem, 6vw, 3rem);
+  
+  display: inline-block;
+  margin-top: 20px;
+  position: relative;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .quote-section {
+    padding: 100px 20px;
+  }
+  
+  .floral-1, .floral-3 {
+    width: 80px;
+  }
+  
+  .floral-2, .floral-4 {
+    width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .quote-section {
+    padding: 80px 20px;
+    margin-top: 140px;
+  }
+  
+  .quote-box {
+    padding: 50px 30px;
+  }
+  .quote-signature{
+    font-size: 2rem;
+  }
+  
+  .floral-decoration {
+    opacity: 0.1;
+  }
+  
+  .floral-1 {
+    left: -20px;
+  }
+  
+  .floral-2 {
+    right: -20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quote-section {
+    padding: 60px 15px;
+  }
+  
+  .quote-box {
+    padding: 40px 20px;
+  }
+  
+  .floral-decoration {
+    display: none; /* Hide on very small screens */
+  }
+  
+  .quote-heading {
+    line-height: 1.3;
+  }
+}
+</style>
+
+<section class="quote-section">
+  <!-- Floating Floral Elements -->
+  <!-- Replace your floral decorations with these guaranteed-to-display alternatives -->
+<img src="pngwing.com (6).png" alt="Floral decoration" class="floral-decoration floral-1" >
+<img src="pngwing.com (8).png" alt="Floral decoration" class="floral-decoration floral-2" >
+<img src="pngwing.com (9).png" alt="Floral decoration" class="floral-decoration floral-4" >
+
+  <div class="quote-box">
+    <p class="quote-heading">
+      YOUR WEDDING SHOULD BE<br />
+      UNFORGETTABLE, DEEPLY ROMANTIC,<br />
+      EXQUISITELY BEAUTIFUL & ENTIRELY "YOU"
+    </p>
+
+    <p class="quote-subtext">
+      Lectus sit turpis iaculis eu non sed turpis suscipit facilisi. Lorem
+      morbi non morbi id aliquam. Urna adipiscing odio.
+    </p>
+    <p class="quote-signature">Lynn Goodman</p>
+  </div>
+</section>
+
+<style>
+.services-container {
+  background-color: var(--bg-color);
+}
+
+.services-heading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.services-heading h2 {
+  font-family: var(--font-title);
+  font-size: 4.5rem;
+  color: var(--accent-dark);
+  margin-bottom: 1rem;
+}
+
+.services-heading p {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--text-color);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+
+}
+
+.service-card {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.service-image-container {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.05);
+}
+
+.service-card h3 {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-dark);
+}
+
+.service-card p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
+  color: var(--text-color);
+}
+
+.service-link {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: var(--accent-dark);
+  text-decoration: none;
+  position: relative;
+}
+
+.service-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--accent-dark);
+  transition: transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.service-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    padding: 4rem 1.5rem;
+  }
+
+.services-heading h2 {
+  font-size: 3.5rem;
+}
+  
+  .services-heading {
+    margin-bottom: 3rem;
+  }
+  
+  .service-image-container {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-image-container {
+    height: 200px;
+  }
+}
+</style>
+
+<section class="services-container">
+  <div class="services-heading">
+    <h2>Signature Experiences</h2>
+    <p>Discover our comprehensive wedding and event planning services tailored to your unique vision</p>
+  </div>
+  
+  <div class="services">
+    <div class="service-card">
+      <div class="service-image-container">
+        <img src="https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c80ecf92b9227f9cf593e_img_1.jpg" alt="Weddings">
+      </div>
+      <h3>Weddings</h3>
+      <p>Adipiscing mauris sed metus dictum eget morbi aliquet. Sit neque tempus eget dictum velit tristique.</p>
+      <a href="#" class="service-link">LEARN MORE</a>
+    </div>
+    
+    <div class="service-card">
+      <div class="service-image-container">
+        <img src="https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c995bd538075c43f4c0b7_img_5.jpg" alt="Event Design">
+      </div>
+      <h3>Event Design</h3>
+      <p>Lectus sit turpis iaculis eu non sed turpis suscipit facilisi. Lorem morbi non morbi id aliquam. Urna adipiscing odio.</p>
+      <a href="#" class="service-link">LEARN MORE</a>
+    </div>
+    
+    <div class="service-card">
+      <div class="service-image-container">
+        <img src="https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c80ec3798f1029502d222_img_3.jpg" alt="Branding">
+      </div>
+      <h3>Branding</h3>
+      <p>Tristique sodales consectetur lectus feugiat molestie. Condimentum eu faucibus dictum adipiscing.</p>
+      <a href="#" class="service-link">LEARN MORE</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .weave-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 90px auto 30px auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .weave-content {
+    max-width: 600px;
+    flex: 1;
+    position: relative;
+    z-index: 2;
+  }
+
+  .weave-label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #9c9c8c;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .weave-heading {
+    font-family: var(--font-heading);
+    font-size: 48px;
+    line-height: 1.2;
+    color: var(--accent-dark);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    position: relative;
+  }
+
+  .weave-description {
+    font-size: 16px;
+    color: #545748;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+
+  .weave-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #d88c96;
+    color: #545748;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+  }
+
+  .weave-button:hover {
+    background-color: #d88c96;
+    color: white;
+  }
+
+  .weave-image-wrap {
+    flex: 1;
+    max-width: 100%;
+    position: relative;
+  }
+
+  .weave-image {
+    max-width: 100%;
+    height: 580px;
+    border-radius: 5px;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  }
+
+  /* Floral decorations */
+  .weave-floral {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.2;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .weave-floral-1 {
+    width: 250px;
+    top: -50px;
+    left: -50px;
+    transform: rotate(-15deg);
+    animation-delay: 0s;
+  }
+
+  .weave-floral-2 {
+    width: 300px;
+    bottom: -80px;
+    right: -80px;
+    transform: rotate(25deg);
+    animation-delay: 1s;
+  }
+
+  .weave-floral-3 {
+    width: 180px;
+    top: 50%;
+    left: 30%;
+    transform: rotate(10deg);
+    animation-delay: 0.5s;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) rotate(var(--initial-rotation));
+    }
+    50% {
+      transform: translateY(-20px) rotate(var(--initial-rotation));
+    }
+  }
+
+  /* Responsive Breakpoints */
+  @media (max-width: 1024px) {
+    .weave-section {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .weave-content {
+      max-width: 90%;
+    }
+
+    .weave-image-wrap {
+      max-width: 90%;
+      margin-top: 40px;
+    }
+
+    .weave-image {
+      height: 400px;
+    }
+
+    .weave-floral {
+      opacity: 0.15;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .weave-heading {
+      font-size: 32px;
+    }
+
+    .weave-description {
+      font-size: 15px;
+    }
+
+    .weave-button {
+      font-size: 13px;
+      padding: 8px 16px;
+    }
+
+    .weave-image {
+      height: 300px;
+    }
+
+    .weave-floral {
+      width: 150px !important;
+      opacity: 0.1;
+    }
+  }
+</style>
+
+<section class="weave-section">
+  <!-- Floral decorations -->
+  <img src="pngwing.com (5).png" alt="Floral decoration" class="weave-floral weave-floral-1">
+  <img src="pngwing.com (8).png" alt="Floral decoration" class="weave-floral weave-floral-2">
+  <img src="pngwing.com (6).png" alt="Floral decoration" class="weave-floral weave-floral-3">
+  
+  <div class="weave-content">
+    <p class="weave-label">WHO WE ARE</p>
+    <h1 class="weave-heading">Weave story into every thread of your event</h1>
+    <p class="weave-description">
+      Cras urna sed purus magna morbi morbi congue suspendisse. Est faucibus hendrerit donec nisi, feugiat suscipit eu, sit. Orci euismod nibh.
+    </p>
+    <a href="#" class="weave-button">More About Us</a>
+  </div>
+  <div class="weave-image-wrap">
+    <img src="https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c80ecf92b9227f9cf593e_img_1.jpg" alt="Bouquet" class="weave-image">
+  </div>
+</section>
+
+
+
+<style>
+  .gallery-section {
+    padding: 80px 20px;
+    background-color: var(--bg-color);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gallery-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .gallery-header h2 {
+    font-family: "Great Vibes", cursive;
+    font-size: 4.5rem;
+    color: var(--accent-dark);
+    margin-bottom: 15px;
+    line-height: 1;
+  }
+
+  .gallery-header p {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: var(--text-color);
+    max-width: 600px;
+    margin: 0 auto;
+    letter-spacing: 0.5px;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+    grid-auto-flow: dense;
+  }
+
+  .gallery-grid img:nth-child(3n+1) {
+    grid-row: span 2;
+  }
+
+  .gallery-grid img:nth-child(4n+4) {
+    grid-column: span 2;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+  }
+
+  .gallery-grid img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Floral decoration for gallery */
+  .gallery-floral {
+    position: absolute;
+    opacity: 0.15;
+    z-index: 1;
+  }
+
+  .gallery-floral-1 {
+    width: 300px;
+    top: 50px;
+    left: -50px;
+    transform: rotate(-25deg);
+  }
+
+  .gallery-floral-2 {
+    width: 400px;
+    bottom: -100px;
+    right: -100px;
+    transform: rotate(15deg);
+  }
+
+  @media (max-width: 768px) {
+    .gallery-header h2 {
+      font-size: 3.5rem;
+    }
+    
+    .gallery-header p {
+      font-size: 1rem;
+      padding: 0 20px;
+    }
+    
+    .gallery-floral {
+      opacity: 0.1;
+    }
+  }
+</style>
+
+<section class="gallery-section">
+  <!-- Floral decorations -->
+  <img src="pngwing.com (5).png" alt="Floral decoration" class="gallery-floral gallery-floral-1">
+  <img src="pngwing.com (8).png" alt="Floral decoration" class="gallery-floral gallery-floral-2">
+  
+  <div class="gallery-header">
+    <h2>Our Gallery</h2>
+    <p>Capturing the magic of unforgettable moments - browse through our collection of beautiful weddings and events</p>
+  </div>
+  
+  <div class="gallery-grid">
+    <img src="https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c80ecf92b9227f9cf593e_img_1.jpg" alt="Bride">
+    <img src="https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c995bd53807b403f4c0b6_img_8.jpg" alt="Couple kissing">
+    <img src="https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c995bdafde34ebec2fcda_img_6.jpg" alt="Wedding rings">
+    <img src="https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c995b895b7a5ff922e5e9_img_9.jpg" alt="Wedding venue">
+    <img src="https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c995bd5f573418e62eb65_img_11.jpg" alt="Bride and groom">
+    <img src="https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c995bd538075c43f4c0b7_img_5.jpg" alt="Reception">
+  </div>
+</section>
+
+
+
+
+
+
+
+
+    <script>
+      function toggleMenu() {
+        const navLeft = document.querySelector(".nav-left");
+        const body = document.body;
+        navLeft.classList.toggle("show");
+        if (navLeft.classList.contains("show")) {
+          body.style.overflow = "hidden";
+        } else {
+          body.style.overflow = "";
+        }
+      }
+    </script>
+  </body>
+</html>

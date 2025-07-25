@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Lovio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Mulish:wght@400;500&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+      :root {
+        --bg-color: #f2e9eb;
+        --text-color: #545748;
+        --accent-color: #d88c96;
+        --accent-dark: #8c5a60;
+        --leaf-color: #647a6e;
+        --font-heading: "Playfair Display", serif;
+        --font-body: "Mulish", sans-serif;
+        --font-script: "Pacifico", cursive;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+      }
+
+      /* Navigation Styles */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        border-bottom: 1px solid #eae7df;
+        position: sticky;
+        top: 0;
+        background-color: var(--bg-color);
+        z-index: 100;
+        flex-wrap: wrap;
+      }
+
+      .nav-group {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: var(--text-color);
+        transition: color 0.3s ease;
+        position: relative;
+      }
+
+      .nav-link:hover {
+        color: var(--accent-color);
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: var(--accent-color);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .logo {
+        font-family: var(--font-heading);
+        font-size: 28px;
+        letter-spacing: 2px;
+        order: 2;
+        color: var(--accent-dark);
+      }
+
+      .hamburger {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        order: 1;
+      }
+
+      .nav-left {
+        order: 1;
+      }
+
+      .nav-right {
+        order: 3;
+      }
+
+      /* Hero Section */
+      .about-hero {
+        padding: 120px 20px 60px;
+        text-align: center;
+        position: relative;
+        /* overflow: hidden; */
+      }
+
+      .about-wrapper {
+        max-width: 1200px;
+        margin: auto;
+        position: relative;
+      }
+
+      .hero-text {
+        margin-bottom: 0px;
+        position: relative;
+        z-index: 3;
+      }
+
+      .hero-text h1 {
+        font-family: var(--font-heading);
+        font-size: 4.5rem;
+        color: var(--accent-dark);
+        margin-bottom: 20px;
+        line-height: 1.1;
+      }
+
+      .hero-text p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+        color: #8a7d74;
+      }
+
+      .main-image {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 40px;
+        height: 650px;
+      }
+
+      .main-image img {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        object-fit: cover;
+        
+        border: 8px solid white;
+
+      }
+
+      .center-img {
+        width: 40%;
+        height: 600px;
+        z-index: 10;
+        position: relative;
+      }
+
+      .side-img {
+        position: absolute;
+        width: 30%;
+        z-index: 9;
+        opacity: 0.9;
+        border: 8px solid white;
+      }
+
+      .left-img {
+        left: 4%;
+        top: 20%;
+        z-index: 9;
+
+        transform: rotate(-10deg);
+      }
+
+      .right-img {
+        right: 4%;
+        top: 20%;
+        z-index: 9;
+
+        transform: rotate(10deg);
+      }
+
+      /* Story Section */
+      .story-section {
+        padding: 120px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 8;
+      }
+
+      .section-label {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #9c9c8c;
+        font-size: 14px;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      .section-heading {
+        font-family: var(--font-heading);
+        font-size: 3rem;
+        line-height: 1.2;
+        color: var(--accent-dark);
+        margin-bottom: 50px;
+        letter-spacing: 1px;
+      }
+
+      .story-content {
+        display: flex;
+        gap: 60px;
+        align-items: center;
+        margin-bottom: 80px;
+      }
+
+      .story-text {
+        flex: 1;
+      }
+
+      .story-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        color: var(--text-color);
+      }
+
+      .story-image {
+        flex: 1;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      }
+
+      .story-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+
+      .story-image:hover img {
+        transform: scale(1.05);
+      }
+
+      /* Values Section */
+      .values-section {
+        padding: 100px 20px;
+        background-color: #f8f4f5;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .values-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .values-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .values-header h2 {
+        font-family: var(--font-heading);
+        font-size: 3rem;
+        color: var(--accent-dark);
+        margin-bottom: 15px;
+      }
+
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+      }
+
+      .value-card {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .value-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .value-icon {
+        font-size: 3rem;
+        color: var(--accent-color);
+        margin-bottom: 25px;
+      }
+
+      .value-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        color: var(--accent-dark);
+        margin-bottom: 15px;
+      }
+
+      .value-card p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--text-color);
+      }
+
+      /* Floral Decorations */
+
+
+
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0) rotate(var(--initial-rotation));
+        }
+        50% {
+          transform: translateY(-20px) rotate(var(--initial-rotation));
+        }
+      }
+
+      /* Footer Styles */
+      .footer {
+        background-color: #2a2a2a;
+        color: #eae7df;
+        padding: 80px 20px 30px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+      }
+
+      .footer-logo {
+        font-family: var(--font-heading);
+        font-size: 28px;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+        color: white;
+      }
+
+      .footer-about p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        color: #c4c4c4;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-link {
+        color: #eae7df;
+        font-size: 18px;
+        transition: color 0.3s ease;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .social-link:hover {
+        color: var(--accent-color);
+        background: rgba(255,255,255,0.2);
+      }
+
+      .footer-heading {
+        font-family: var(--font-heading);
+        font-size: 18px;
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+        color: white;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 12px;
+      }
+
+      .footer-links a {
+        color: #c4c4c4;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 15px;
+      }
+
+      .footer-links a:hover {
+        color: var(--accent-color);
+      }
+
+      .footer-contact p {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 15px;
+        color: #c4c4c4;
+      }
+
+      .footer-contact i {
+        margin-right: 10px;
+        color: var(--accent-color);
+        width: 20px;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 40px;
+        margin-top: 40px;
+        border-top: 1px solid #444;
+        font-size: 14px;
+        color: #8a8a8a;
+      }
+
+      .footer-floral {
+        position: absolute;
+        opacity: 0.1;
+        z-index: 1;
+      }
+
+      .footer-floral-1 {
+        width: 300px;
+        top: 50px;
+        left: -100px;
+        transform: rotate(-25deg);
+      }
+
+      .footer-floral-2 {
+        width: 250px;
+        bottom: 50px;
+        right: -80px;
+        transform: rotate(25deg);
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 1024px) {
+        .main-image {
+          height: 500px;
+        }
+        
+        .center-img {
+          height: 400px;
+        }
+        
+        .hero-text h1 {
+          font-size: 3.5rem;
+        }
+        
+        .story-content {
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          padding: 15px 20px;
+        }
+
+        .logo {
+          font-size: 24px;
+        }
+
+        .hamburger {
+          display: block;
+        }
+
+        .nav-group {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background-color: var(--bg-color);
+          flex-direction: column;
+          justify-content: center;
+          gap: 30px;
+          transform: translateY(-100%);
+          transition: transform 0.3s ease-in-out;
+          z-index: 10;
+          padding-top: 80px;
+        }
+
+        .nav-group.show {
+          transform: translateY(0);
+        }
+
+        .nav-left,
+        .nav-right {
+          display: flex;
+        }
+
+        .nav-right {
+          display: none;
+        }
+
+        .nav-left {
+          flex-direction: column;
+        }
+
+        .nav-left .nav-link {
+          font-size: 18px;
+          padding: 10px 0;
+        }
+
+        .hero-text h1 {
+          font-size: 2.8rem;
+        }
+        
+        .main-image {
+          flex-direction: column;
+          height: auto;
+          align-items: center;
+          gap: 30px;
+        }
+        
+        .center-img, .side-img {
+          position: static;
+          width: 80%;
+          transform: none !important;
+          margin-bottom: 20px;
+        }
+        
+        .side-img {
+          display: none;
+        }
+        
+        .section-heading {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-text h1 {
+          font-size: 2.2rem;
+        }
+        
+        .hero-text p {
+          font-size: 1rem;
+        }
+        
+        .section-heading {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <div class="navbar">
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div class="nav-group nav-left">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">About</a>
+        <a href="#" class="nav-link">Services</a>
+      </div>
+      <div class="logo">LOVIO</div>
+      <div class="nav-group nav-right">
+        <a href="#" class="nav-link">Portfolio</a>
+        <a href="#" class="nav-link">Contact</a>
+        <a href="#" class="nav-link">Gallery</a>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+      <!-- <img src="pngwing.com (5).png" alt="Floral decoration" class="floral-decoration floral-1"> -->
+      
+      <div class="about-wrapper">
+        <div class="hero-text">
+          <h1>Our Journey of Love & Celebration</h1>
+          <p>For over a decade, Lovio has been crafting unforgettable moments that turn dreams into cherished memories.</p>
+        </div>
+        
+        <div class="main-image">
+          <img
+            src="https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/611741cae10dfd647579ab64_about_1.jpg"
+            alt="Main Girl"
+            class="center-img"
+          />
+          <img
+            src="https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/611741ca3980cf0277acd465_about_2.jpg"
+            alt="Left Girl"
+            class="side-img left-img"
+          />
+          <img
+            src="https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/611741ca70d519fb6b31d73c_about_3.jpg"
+            alt="Right Girl"
+            class="side-img right-img"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+      <span class="section-label">OUR STORY</span>
+      <h2 class="section-heading">Weaving Dreams Since 2010</h2>
+      
+      <div class="story-content">
+        <div class="story-text">
+          <p>Founded in the heart of Mumbai, Lovio began as a small boutique wedding planning service with a vision to create celebrations that are as unique as the couples we serve. What started as a passion project has blossomed into one of India and Europe's most sought-after wedding planning companies.</p>
+          <p>Our philosophy is simple: every love story is unique, and every wedding should reflect that individuality. We don't believe in cookie-cutter celebrations. Instead, we work closely with each couple to design an event that authentically represents their personalities, values, and dreams.</p>
+          <p>Over the past decade, we've had the privilege of orchestrating over 300 weddings across three continents, each one more beautiful than the last. Our team of dedicated professionals brings together expertise in design, logistics, and hospitality to create seamless, stress-free wedding experiences.</p>
+        </div>
+        <div class="story-image">
+          <img src="https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c995bd538075c43f4c0b7_img_5.jpg" alt="Wedding planning">
+        </div>
+      </div>
+      
+      <div class="story-content">
+        <div class="story-image">
+          <img src="https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c995bd5f573418e62eb65_img_11.jpg" alt="Bride and groom">
+        </div>
+        <div class="story-text">
+          <p>What sets Lovio apart is our meticulous attention to detail and our commitment to excellence. From the initial consultation to the final farewell, we handle every aspect of your wedding with care and precision.</p>
+          <p>We pride ourselves on our extensive network of trusted vendors, our creative design solutions, and our ability to anticipate needs before they arise. Whether you're planning an intimate gathering or a grand celebration, we have the expertise to make your vision a reality.</p>
+          <p>Based in Mumbai with satellite offices in Paris and Florence, we specialize in destination weddings that showcase the beauty of each location while maintaining the cultural traditions that are important to you and your family.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+      <div class="values-container">
+        <div class="values-header">
+          <span class="section-label">OUR VALUES</span>
+          <h2 class="section-heading">The Heart of Lovio</h2>
+        </div>
+        
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3>Passion</h3>
+            <p>We pour our hearts into every event, treating each wedding as if it were our own.</p>
+          </div>
+          
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Creativity</h3>
+            <p>We believe in thinking outside the box to create unique experiences that reflect your personality.</p>
+          </div>
+          
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <h3>Excellence</h3>
+            <p>From vendor selection to timeline execution, we maintain the highest standards.</p>
+          </div>
+          
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-hands-helping"></i>
+            </div>
+            <h3>Collaboration</h3>
+            <p>We work closely with you to create cohesive, beautiful celebrations.</p>
+          </div>
+          
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-globe-asia"></i>
+            </div>
+            <h3>Cultural Sensitivity</h3>
+            <p>We honor traditions while innovating to create meaningful ceremonies.</p>
+          </div>
+          
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-laugh"></i>
+            </div>
+            <h3>Joy</h3>
+            <p>We believe weddings should be fun! Our team brings positive energy to every step.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Instagram Section -->
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+      <img src="pngwing.com (5).png" alt="Floral decoration" class="footer-floral footer-floral-1">
+      <img src="pngwing.com (6).png" alt="Floral decoration" class="footer-floral footer-floral-2">
+      
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo">LOVIO</div>
+          <p>Creating unforgettable weddings and events with passion and attention to detail. We specialize in luxury celebrations across India and Europe.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links-container">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-services">
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-links">
+            <li><a href="#">Wedding Planning</a></li>
+            <li><a href="#">Event Design</a></li>
+            <li><a href="#">Destination Weddings</a></li>
+            <li><a href="#">Floral Design</a></li>
+            <li><a href="#">Full Coordination</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3 class="footer-heading">Contact Us</h3>
+          <p><i class="fas fa-map-marker-alt"></i> 123 Wedding Lane, Mumbai, India</p>
+          <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+          <p><i class="fas fa-envelope"></i> hello@lovio.com</p>
+          <p><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2023 Lovio Weddings. All Rights Reserved. | Crafted with love and joy</p>
+      </div>
+    </footer>
+
+    <script>
+      // Toggle mobile menu
+      function toggleMenu() {
+        const navLeft = document.querySelector(".nav-left");
+        const body = document.body;
+        navLeft.classList.toggle("show");
+        if (navLeft.classList.contains("show")) {
+          body.style.overflow = "hidden";
+        } else {
+          body.style.overflow = "";
+        }
+      }
+
+      // GSAP Animations
+      document.addEventListener("DOMContentLoaded", function() {
+        // Hero section animations
+        gsap.registerPlugin(ScrollTrigger);
+        
+        const tl = gsap.timeline();
+        tl.from(".hero-text h1", {
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          ease: "power3.out"
+        })
+        .from(".hero-text p", {
+          opacity: 0,
+          y: 30,
+          duration: 0.8,
+          ease: "power2.out"
+        }, "-=0.5")
+        .from(".center-img", {
+          opacity: 0,
+          scale: 0.8,
+          duration: 1.2,
+          ease: "power2.out",
+        }, "-=0.5")
+        .from(".left-img", {
+          x: 100,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+        }, "-=0.8")
+        .from(".right-img", {
+          x: -100,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+        }, "-=0.8");
+
+        // Story section animations
+        gsap.utils.toArray(".story-content").forEach((section, i) => {
+          gsap.from(section, {
+            scrollTrigger: {
+              trigger: section,
+              start: "top 90%",
+              toggleActions: "play none none none"
+            },
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            stagger: 0.2,
+            delay: i * 0.2
+          });
+        });
+
+        // Value cards animation
+        gsap.from(".value-card", {
+          scrollTrigger: {
+            trigger: ".values-grid",
+            start: "top 80%",
+            toggleActions: "play none none none"
+          },
+          opacity: 0,
+          y: 50,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power2.out"
+        });
+      });
+    </script>
+  </body>
+</html>

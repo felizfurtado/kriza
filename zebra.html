@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Weddings & Parties</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Mulish:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f2e9eb;
+      --text-color: #545748;
+      --accent-color: #d88c96;
+      --accent-dark: #8c5a60;
+      --leaf-color: #647a6e;
+      --font-heading: "Playfair Display", serif;
+      --font-body: "Mulish", sans-serif;
+      --font-title: "Great Vibes", cursive;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-bottom: 1px solid #eae7df;
+      position: sticky;
+      top: 0;
+      background-color: var(--bg-color);
+      z-index: 100;
+      flex-wrap: wrap;
+    }
+
+    .nav-group {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-color);
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--accent-color);
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      letter-spacing: 2px;
+      order: 2;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      order: 1;
+    }
+
+    .nav-left {
+      order: 1;
+    }
+
+    .nav-right {
+      order: 3;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      display: flex;
+      width: 100%;
+      height: 80vh;
+      position: relative;
+    }
+
+    .hero-image-wrapper {
+      flex: 1;
+      padding: 15px;
+      overflow: hidden;
+    }
+
+    .hero-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-box {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 60px 150px;
+      background-color: #fffafa;
+      text-align: center;
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.06);
+      max-width: 95%;
+    }
+
+    .hero-box p {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      color: #555;
+    }
+
+    .hero-box h1 {
+      font-family: var(--font-heading);
+      font-size: 56px;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+
+    .hero-box span {
+      font-size: 15px;
+      color: #8a7d74;
+    }
+
+    .flower {
+      width: 500px;
+      position: absolute;
+      top: 62%;
+      left: 0%;
+      z-index: 5;
+    }
+    
+    .flower2 {
+      width: 500px;
+      position: absolute;
+      top: 62%;
+      right: 0%;
+      z-index: 5;
+    }
+
+    /* Quote Section */
+    .quote-section {
+      background-color: var(--bg-color);
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .quote-box {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 60px 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .floral-decoration {
+      position: absolute;
+      opacity: 0.5;
+      z-index: 1;
+    }
+
+    .floral-1 {
+      width: 250px;
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+      transform: rotate(-155deg);
+    }
+
+    .floral-2 {
+      width: 350px;
+      bottom: 15%;
+      right: 8%;
+      animation-delay: 1s;
+      transform: rotate(25deg);
+    }
+
+    .floral-4 {
+      width: 80px;
+      bottom: 0%;
+      opacity: 0.55;
+      left: 48%;
+      transform: rotate(90deg);
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(var(--initial-rotation));
+      }
+      50% {
+        transform: translateY(-20px) rotate(var(--initial-rotation));
+      }
+    }
+
+    .quote-heading {
+      font-family: "Marcellus", serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      line-height: 1.4;
+      letter-spacing: 0.5px;
+      margin-bottom: 30px;
+      color: var(--accent-dark);
+      position: relative;
+    }
+
+    .quote-subtext {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 1.8vw, 1.3rem);
+      color: var(--text-color);
+      line-height: 1.8;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .quote-signature {
+      font-size: clamp(2rem, 6vw, 3rem);
+      display: inline-block;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    /* Services Section */
+    .services-container {
+      background-color: var(--bg-color);
+      padding: 80px 20px;
+    }
+
+    .services-heading {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .services-heading h2 {
+      font-family: var(--font-title);
+      font-size: 4.5rem;
+      color: var(--accent-dark);
+      margin-bottom: 1rem;
+    }
+
+    .services-heading p {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      color: var(--text-color);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      margin-bottom: 3rem;
+    }
+
+    .service-card {
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .service-image-container {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .service-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .service-card h3 {
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent-dark);
+    }
+
+    .service-card p {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      padding: 0 1rem;
+      color: var(--text-color);
+    }
+
+    .service-link {
+      font-family: var(--font-body);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      color: var(--accent-dark);
+      text-decoration: none;
+      position: relative;
+    }
+
+    .service-link::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--accent-dark);
+      transition: transform 0.3s ease;
+      transform: scaleX(0);
+      transform-origin: right;
+    }
+
+    .service-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* Portfolio Section */
+    .portfolio-section {
+      padding: 80px 20px;
+      background-color: var(--bg-color);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio-header {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .portfolio-header h2 {
+      font-family: "Great Vibes", cursive;
+      font-size: 4.5rem;
+      color: var(--accent-dark);
+      margin-bottom: 15px;
+      line-height: 1;
+    }
+
+    .portfolio-header p {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      color: var(--text-color);
+      max-width: 600px;
+      margin: 0 auto;
+      letter-spacing: 0.5px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s ease;
+      height: 300px;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(216, 140, 150, 0.7);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-overlay h3 {
+      color: white;
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .portfolio-overlay p {
+      color: white;
+      font-size: 0.9rem;
+      text-align: center;
+      max-width: 90%;
+    }
+
+    /* Testimonial Section */
+    .testimonial-section {
+      padding: 100px 20px;
+      background-color: #f9f5f6;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .testimonial-header h2 {
+      font-family: var(--font-title);
+      font-size: 4rem;
+      color: var(--accent-dark);
+      margin-bottom: 15px;
+    }
+
+    .testimonial-header p {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      color: var(--text-color);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .testimonial-card::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-family: Georgia, serif;
+      font-size: 60px;
+      color: var(--accent-color);
+      opacity: 0.3;
+    }
+
+    .testimonial-content {
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      color: var(--text-color);
+      position: relative;
+      z-index: 2;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+
+    .author-image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 15px;
+    }
+
+    .author-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .author-info h4 {
+      font-family: var(--font-heading);
+      color: var(--accent-dark);
+      margin-bottom: 5px;
+    }
+
+    .author-info p {
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    .testimonial-floral {
+      position: absolute;
+      opacity: 0.1;
+      z-index: 1;
+    }
+
+    .testimonial-floral-1 {
+      width: 300px;
+      top: -100px;
+      left: -100px;
+      transform: rotate(-25deg);
+    }
+
+    .testimonial-floral-2 {
+      width: 400px;
+      bottom: -100px;
+      right: -100px;
+      transform: rotate(15deg);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #2a2a2a;
+      color: #f0f0f0;
+      padding: 70px 20px 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto 50px;
+    }
+
+    .footer-column h3 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-column h3::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--accent-color);
+    }
+
+    .footer-about p {
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #bbb;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: #bbb;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-color);
+    }
+
+    .footer-contact p {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      color: #bbb;
+    }
+
+    .footer-contact i {
+      margin-right: 10px;
+      color: var(--accent-color);
+      min-width: 20px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #3a3a3a;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid #444;
+      max-width: 1200px;
+      margin: 0 auto;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    .footer-floral {
+      position: absolute;
+      opacity: 0.05;
+      z-index: 1;
+    }
+
+    .footer-floral-1 {
+      width: 400px;
+      top: -150px;
+      left: -100px;
+      transform: rotate(-15deg);
+    }
+
+    .footer-floral-2 {
+      width: 350px;
+      bottom: -100px;
+      right: -100px;
+      transform: rotate(25deg);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1024px) {
+      .hero-box {
+        padding: 40px 100px;
+      }
+      
+      .flower, .flower2 {
+        width: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 15px 20px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        order: 2;
+        margin: 0 auto;
+        padding: 10px 0;
+      }
+
+      .hamburger {
+        display: block;
+        order: 1;
+        z-index: 20;
+      }
+
+      .nav-group {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--bg-color);
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 10;
+        padding-top: 80px;
+      }
+
+      .nav-group.show {
+        transform: translateY(0);
+      }
+
+      .nav-left,
+      .nav-right {
+        display: flex;
+      }
+
+      .nav-right {
+        display: none;
+      }
+
+      .nav-left {
+        flex-direction: column;
+      }
+
+      .nav-left .nav-link {
+        font-size: 18px;
+        padding: 10px 0;
+      }
+
+      .hero-section {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: 400px;
+      }
+
+      .hero-image-wrapper {
+        flex: 0 0 33.33%;
+        padding: 3px;
+        height: 80%;
+      }
+
+      .hero-image-wrapper img {
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero-box {
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px 15px;
+        width: 90vw;
+        max-width: 100%;
+        z-index: 1;
+      }
+
+      .hero-box h1 {
+        font-size: 40px;
+      }
+
+      .hero-box img.flower {
+        width: 10px;
+      }
+      
+      .flower,
+      .flower2 {
+        width: 250px;
+        top: 115%;
+        z-index: 5;
+      }
+
+      .quote-section {
+        padding: 80px 20px;
+        margin-top: 140px;
+      }
+      
+      .quote-box {
+        padding: 50px 30px;
+      }
+      
+      .quote-signature {
+        font-size: 2rem;
+      }
+      
+      .floral-decoration {
+        opacity: 0.1;
+      }
+      
+      .floral-1 {
+        left: -20px;
+      }
+      
+      .floral-2 {
+        right: -20px;
+      }
+
+      .services-heading h2 {
+        font-size: 3.5rem;
+      }
+      
+      .services-heading {
+        margin-bottom: 3rem;
+      }
+      
+      .service-image-container {
+        height: 250px;
+      }
+
+      .portfolio-header h2 {
+        font-size: 3.5rem;
+      }
+      
+      .portfolio-header p {
+        font-size: 1rem;
+        padding: 0 20px;
+      }
+
+      .testimonial-header h2 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-section {
+        height: 300px;
+      }
+      
+      .hero-box {
+        top: 110%;
+      }
+      
+      .hero-box h1 {
+        font-size: 32px;
+      }
+      
+      .flower, .flower2 {
+        width: 150px;
+        top: 120%;
+      }
+      
+      .quote-section {
+        padding: 60px 15px;
+      }
+      
+      .quote-box {
+        padding: 40px 20px;
+      }
+      
+      .floral-decoration {
+        display: none;
+      }
+      
+      .quote-heading {
+        line-height: 1.3;
+      }
+      
+      .services {
+        grid-template-columns: 1fr;
+      }
+      
+      .service-image-container {
+        height: 200px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <div class="nav-group nav-left">
+      <a href="#" class="nav-link">Home</a>
+      <a href="#" class="nav-link">About</a>
+      <a href="#" class="nav-link">Services</a>
+    </div>
+    <div class="logo">LOVIO</div>
+    <div class="nav-group nav-right">
+      <a href="#" class="nav-link">Portfolio</a>
+      <a href="#" class="nav-link">Contact</a>
+      <a href="#" class="nav-link">Gallery</a>
+    </div>
+  </div>
+
+  <section class="hero-section">
+    <div class="hero-image-wrapper">
+      <img src="https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610b4126a35dd31cb8da134d_home_a1.jpg" alt="Wedding party image" loading="lazy">
+    </div>
+    <div class="hero-image-wrapper">
+      <img src="https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610b4126b00a600bfdb60d4b_home_a2.jpg" alt="Wedding decoration image" loading="lazy">
+    </div>
+    <div class="hero-image-wrapper">
+      <img src="https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610b412633b829429dbd6b27_home_a3.jpg" alt="Wedding celebration image" loading="lazy">
+    </div>
+
+    <div class="hero-box">
+      <p>Personally tailored for you</p>
+      <h1>Luxury Weddings<br>& Parties</h1>
+      <span>India & Europe</span>
+      <div></div>
+    </div>
+    <img src="pngwing.com (5).png" alt="Flower icon" class="flower2">
+    <img src="pngwing.com (5).png" alt="Flower icon" class="flower">
+  </section>
+
+  <section class="quote-section">
+    <img src="pngwing.com (6).png" alt="Floral decoration" class="floral-decoration floral-1">
+    <img src="pngwing.com (8).png" alt="Floral decoration" class="floral-decoration floral-2">
+    <img src="pngwing.com (9).png" alt="Floral decoration" class="floral-decoration floral-4">
+
+    <div class="quote-box">
+      <p class="quote-heading">
+        YOUR WEDDING SHOULD BE<br>
+        UNFORGETTABLE, DEEPLY ROMANTIC,<br>
+        EXQUISITELY BEAUTIFUL & ENTIRELY "YOU"
+      </p>
+
+      <p class="quote-subtext">
+        Lectus sit turpis iaculis eu non sed turpis suscipit facilisi. Lorem
+        morbi non morbi id aliquam. Urna adipiscing odio.
+      </p>
+      <p class="quote-signature">Lynn Goodman</p>
+    </div>
+  </section>
+
+  <section class="services-container">
+    <div class="services-heading">
+      <h2>Signature Experiences</h2>
+      <p>Discover our comprehensive wedding and event planning services tailored to your unique vision</p>
+    </div>
+    
+    <div class="services">
+      <div class="service-card">
+        <div class="service-image-container">
+          <img src="https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c80ecf92b9227f9cf593e_img_1.jpg" alt="Weddings">
+        </div>
+        <h3>Weddings</h3>
+        <p>Adipiscing mauris sed metus dictum eget morbi aliquet. Sit neque tempus eget dictum velit tristique.</p>
+        <a href="#" class="service-link">LEARN MORE</a>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-image-container">
+          <img src="https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c995bd538075c43f4c0b7_img_5.jpg" alt="Event Design">
+        </div>
+        <h3>Event Design</h3>
+        <p>Lectus sit turpis iaculis eu non sed turpis suscipit facilisi. Lorem morbi non morbi id aliquam. Urna adipiscing odio.</p>
+        <a href="#" class="service-link">LEARN MORE</a>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-image-container">
+          <img src="https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c80ec3798f1029502d222_img_3.jpg" alt="Branding">
+        </div>
+        <h3>Branding</h3>
+        <p>Tristique sodales consectetur lectus feugiat molestie. Condimentum eu faucibus dictum adipiscing.</p>
+        <a href="#" class="service-link">LEARN MORE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio-section">
+    <div class="portfolio-header">
+      <h2>Our Portfolio</h2>
+      <p>Capturing the magic of unforgettable moments - browse through our collection of beautiful weddings and events</p>
+    </div>
+    
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c80ecf92b9227f9cf593e_img_1.jpg" alt="Bride">
+        <div class="portfolio-overlay">
+          <h3>Royal Wedding</h3>
+          <p>Grand celebration at Palace Versailles</p>
+        </div>
+      </div>
+      
+      <div class="portfolio-item">
+        <img src="https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c995bd53807b403f4c0b6_img_8.jpg" alt="Couple kissing">
+        <div class="portfolio-overlay">
+          <h3>Beach Ceremony</h3>
+          <p>Sunset wedding in Santorini</p>
+        </div>
+      </div>
+      
+      <div class="portfolio-item">
+        <img src="https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c995bdafde34ebec2fcda_img_6.jpg" alt="Wedding rings">
+        <div class="portfolio-overlay">
+          <h3>Classic Elegance</h3>
+          <p>Traditional church wedding</p>
+        </div>
+      </div>
+      
+      <div class="portfolio-item">
+        <img src="https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c995b895b7a5ff922e5e9_img_9.jpg" alt="Wedding venue">
+        <div class="portfolio-overlay">
+          <h3>Garden Affair</h3>
+          <p>Floral-themed reception</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="testimonial-section">
+    <img src="pngwing.com (5).png" alt="Floral decoration" class="testimonial-floral testimonial-floral-1">
+    <img src="pngwing.com (8).png" alt="Floral decoration" class="testimonial-floral testimonial-floral-2">
+    
+    <div class="testimonial-header">
+      <h2>Happy Couples</h2>
+      <p>What our clients say about their dream wedding experience</p>
+    </div>
+    
+    <div class="testimonials">
+      <div class="testimonial-card">
+        <p class="testimonial-content">"Working with Lovio was the best decision we made for our wedding. Their attention to detail and creative vision brought our dream day to life beyond anything we could have imagined."</p>
+        <div class="testimonial-author">
+          <div class="author-image">
+            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson">
+          </div>
+          <div class="author-info">
+            <h4>Sarah Johnson</h4>
+            <p>Bali Destination Wedding</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-card">
+        <p class="testimonial-content">"From the first meeting to the last dance, the Lovio team was exceptional. They handled every detail seamlessly, allowing us to truly enjoy every moment of our special day."</p>
+        <div class="testimonial-author">
+          <div class="author-image">
+            <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Michael Chen">
+          </div>
+          <div class="author-info">
+            <h4>Michael Chen</h4>
+            <p>New York City Wedding</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-card">
+        <p class="testimonial-content">"The floral arrangements and overall design were breathtaking. Guests are still talking about how beautiful everything was. Thank you for making our wedding unforgettable!"</p>
+        <div class="testimonial-author">
+          <div class="author-image">
+            <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="Priya Patel">
+          </div>
+          <div class="author-info">
+            <h4>Priya Patel</h4>
+            <p>Traditional Indian Wedding</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <img src="pngwing.com (6).png" alt="Floral decoration" class="footer-floral footer-floral-1">
+    <img src="pngwing.com (5).png" alt="Floral decoration" class="footer-floral footer-floral-2">
+    
+    <div class="footer-content">
+      <div class="footer-column footer-about">
+        <h3>About Lovio</h3>
+        <p>Creating unforgettable luxury weddings and events across India and Europe. We specialize in personalized celebrations that reflect your unique love story.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Our Services</h3>
+        <ul class="footer-links">
+          <li><a href="#">Wedding Planning</a></li>
+          <li><a href="#">Event Design</a></li>
+          <li><a href="#">Destination Weddings</a></li>
+          <li><a href="#">Floral Design</a></li>
+          <li><a href="#">Vendor Management</a></li>
+          <li><a href="#">Day-of Coordination</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column footer-contact">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Luxury Lane, Mumbai, India</p>
+        <p><i class="fas fa-phone"></i> +91 123 456 7890</p>
+        <p><i class="fas fa-envelope"></i> info@lovio.com</p>
+        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2023 Lovio Luxury Weddings & Events. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navLeft = document.querySelector(".nav-left");
+      const body = document.body;
+      navLeft.classList.toggle("show");
+      if (navLeft.classList.contains("show")) {
+        body.style.overflow = "hidden";
+      } else {
+        body.style.overflow = "";
+      }
+    }
+  </script>
+</body>
+</html>

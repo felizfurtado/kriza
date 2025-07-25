@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery - From Heaven Events by Kriza</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Mulish:wght@400;500&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Global Styles */
+      :root {
+        --bg-color: #f2e9eb;
+        --text-color: #545748;
+        --accent-color: #d88c96;
+        --accent-dark: #8c5a60;
+        --leaf-color: #647a6e;
+        --accent-light: #f7e5e8;
+        --leaf-color: #647a6e;
+        --gold: #c6a972;
+        --font-heading: "Playfair Display", serif;
+        --font-body: "Mulish", sans-serif;
+        --font-title: "Great Vibes", cursive;
+        --font-secondary: "Montserrat", sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+      }
+
+      /* Navigation Styles */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        border-bottom: 1px solid #eae7df;
+        position: sticky;
+        top: 0;
+        background-color: var(--bg-color);
+        z-index: 100;
+        flex-wrap: wrap;
+      }
+
+      .nav-group {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: var(--text-color);
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--accent-color);
+      }
+
+      .logo {
+        font-family: var(--font-heading);
+        font-size: 28px;
+        letter-spacing: 2px;
+        order: 2;
+        color: var(--accent-dark);
+      }
+
+      .hamburger {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        order: 1;
+      }
+
+      .nav-left {
+        order: 1;
+      }
+
+      .nav-right {
+        order: 3;
+      }
+
+      /* Gallery Hero */
+      .gallery-hero {
+        height: 500px;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        padding: 0 20px;
+        color: var(--accent-dark);
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-content h1 {
+        font-family: var(--font-heading);
+        font-size: 4.5rem;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero-content p {
+        font-size: 1.4rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        max-width: 600px;
+        margin: 0 auto 30px;
+      }
+
+      /* Gallery Controls */
+      .gallery-controls {
+        padding: 50px 20px 30px;
+        text-align: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .gallery-intro {
+        margin-bottom: 40px;
+      }
+
+      .gallery-intro h2 {
+        font-family: var(--font-title);
+        font-size: 4rem;
+        color: var(--accent-dark);
+        margin-bottom: 15px;
+      }
+
+      .gallery-intro p {
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.8;
+      }
+
+      .filter-buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 40px;
+      }
+
+      .filter-btn {
+        padding: 10px 25px;
+        background: transparent;
+        border: 1px solid var(--accent-color);
+        color: var(--text-color);
+        font-family: var(--font-body);
+        font-size: 1rem;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: var(--accent-color);
+        color: white;
+      }
+
+      /* Gallery Grid */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+        padding: 0 20px 80px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .gallery-item {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
+        aspect-ratio: 4/5;
+        cursor: pointer;
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.05);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        padding: 30px 20px 20px;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+
+      .gallery-overlay h3 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+        font-family: var(--font-heading);
+      }
+
+      .gallery-overlay p {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      /* Lightbox */
+      .lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+
+      .lightbox.active {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .lightbox-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+      }
+
+      .lightbox-content img {
+        max-width: 100%;
+        max-height: 80vh;
+        border-radius: 8px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .lightbox-caption {
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.5);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .lightbox-close:hover {
+        background: var(--accent-color);
+        transform: rotate(90deg);
+      }
+
+      .lightbox-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        font-size: 2.5rem;
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.5);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .lightbox-nav:hover {
+        background: var(--accent-color);
+      }
+
+      .lightbox-prev {
+        left: 20px;
+      }
+
+      .lightbox-next {
+        right: 20px;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background-color: #2f3a35;
+        color: #fff;
+        padding: 60px 20px 30px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+      }
+
+      .footer-logo {
+        font-family: var(--font-heading);
+        font-size: 28px;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+      }
+
+      .footer-about p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-link {
+        color: #fff;
+        font-size: 18px;
+        transition: color 0.3s ease;
+      }
+
+      .social-link:hover {
+        color: var(--accent-color);
+      }
+
+      .footer-heading {
+        font-family: var(--font-heading);
+        font-size: 18px;
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 12px;
+      }
+
+      .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 15px;
+      }
+
+      .footer-links a:hover {
+        color: var(--accent-color);
+      }
+
+      .footer-contact p {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 15px;
+      }
+
+      .footer-contact i {
+        margin-right: 10px;
+        color: var(--accent-color);
+        width: 20px;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 40px;
+        margin-top: 40px;
+        border-top: 1px solid #444;
+        font-size: 14px;
+        color: #fff;
+      }
+
+      .footer-floral {
+        position: absolute;
+        opacity: 0.1;
+        z-index: 1;
+      }
+
+      .footer-floral-1 {
+        width: 300px;
+        top: 50px;
+        left: -100px;
+        transform: rotate(-25deg);
+      }
+
+      .footer-floral-2 {
+        width: 250px;
+        bottom: 50px;
+        right: -80px;
+        transform: rotate(25deg);
+      }
+
+      /* Floral Decorations */
+      .floral-decoration {
+        position: absolute;
+        opacity: 0.15;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .floral-1 {
+        width: 200px;
+        top: 100px;
+        left: -50px;
+        transform: rotate(-15deg);
+        animation: float 8s ease-in-out infinite;
+      }
+
+      .floral-2 {
+        width: 180px;
+        bottom: 100px;
+        right: -60px;
+        transform: rotate(25deg);
+        animation: float 10s ease-in-out infinite;
+        animation-delay: 1s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) rotate(var(--initial-rotation));
+        }
+        50% {
+          transform: translateY(-20px) rotate(var(--initial-rotation));
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 1024px) {
+        .gallery-hero {
+          height: 400px;
+        }
+
+        .hero-content h1 {
+          font-size: 3.5rem;
+        }
+
+        .gallery-grid {
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          padding: 15px 20px;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .logo {
+          order: 2;
+          margin: 0 auto;
+          padding: 10px 0;
+        }
+
+        .hamburger {
+          display: block;
+          order: 1;
+          z-index: 20;
+        }
+
+        .nav-group {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background-color: var(--bg-color);
+          flex-direction: column;
+          justify-content: center;
+          gap: 30px;
+          transform: translateY(-100%);
+          transition: transform 0.3s ease-in-out;
+          z-index: 10;
+          padding-top: 80px;
+        }
+
+        .nav-group.show {
+          transform: translateY(0);
+        }
+
+        .nav-left,
+        .nav-right {
+          display: flex;
+        }
+
+        .nav-right {
+          display: none;
+        }
+
+        .nav-left {
+          flex-direction: column;
+        }
+
+        .nav-left .nav-link {
+          font-size: 18px;
+          padding: 10px 0;
+        }
+
+        .gallery-hero {
+          height: 350px;
+        }
+
+        .hero-content h1 {
+          font-size: 2.8rem;
+        }
+
+        .hero-content p {
+          font-size: 1.1rem;
+        }
+
+        .gallery-intro h2 {
+          font-size: 3.5rem;
+        }
+
+        .gallery-grid {
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: 15px;
+          padding: 0 15px 60px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .gallery-hero {
+          height: 300px;
+        }
+
+        .hero-content h1 {
+          font-size: 2.3rem;
+        }
+
+        .gallery-intro h2 {
+          font-size: 3rem;
+        }
+
+        .filter-buttons {
+          gap: 10px;
+        }
+
+        .filter-btn {
+          padding: 8px 15px;
+          font-size: 0.9rem;
+        }
+
+        .gallery-grid {
+          grid-template-columns: 1fr;
+          max-width: 500px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <style>
+        .hha {
+          display: none;
+        }
+
+        /* Show only on mobile */
+        @media (max-width: 768px) {
+          .hha {
+            display: inline-block;
+          }
+        }
+      </style>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars" id="menuIcon"></i>
+        <i class="fa-solid fa-xmark" id="closeIcon" style="display: none"></i>
+      </div>
+
+      <div class="nav-group nav-left">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="portfolio.html" class="nav-link hha">Portfolio</a>
+        <a href="gallery.html" class="nav-link hha">Gallery</a>
+        <a href="contact.html" class="nav-link hha">Contact</a>
+      </div>
+
+      <div class="logo">KRIZA</div>
+
+      <div class="nav-group nav-right">
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <script>
+        function toggleMenu() {
+          const navLeft = document.querySelector(".nav-left");
+          const body = document.body;
+          const menuIcon = document.getElementById("menuIcon");
+          const closeIcon = document.getElementById("closeIcon");
+
+          navLeft.classList.toggle("show");
+
+          if (navLeft.classList.contains("show")) {
+            body.style.overflow = "hidden";
+            menuIcon.style.display = "none";
+            closeIcon.style.display = "block";
+          } else {
+            body.style.overflow = "";
+            menuIcon.style.display = "block";
+            closeIcon.style.display = "none";
+          }
+        }
+      </script>
+    </div>
+
+    <!-- Gallery Controls -->
+    <section class="gallery-controls">
+      <div class="gallery-intro">
+        <h2>Memorable Moments</h2>
+        <p>
+          Step into our world of timeless weddings and exquisite events — where every image captures love, elegance, and detail
+        </p>
+      </div>
+
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Events</button>
+        <button class="filter-btn" data-filter="wedding">Weddings</button>
+        <button class="filter-btn" data-filter="reception">Receptions</button>
+        <button class="filter-btn" data-filter="engagement">Engagements</button>
+        <button class="filter-btn" data-filter="decor">Decor</button>
+      </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-grid">
+      <!-- Wedding Images -->
+      <div class="gallery-item" data-category="wedding">
+        <img
+          src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+          alt="Beach Wedding"
+        />
+        <div class="gallery-overlay">
+          <h3>Beach Wedding</h3>
+          <p>Goa | 2024</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="wedding">
+        <img
+          src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+          alt="Traditional Ceremony"
+        />
+        <div class="gallery-overlay">
+          <h3>Traditional Ceremony</h3>
+          <p>Karwar | 2023</p>
+        </div>
+      </div>
+
+      <!-- Reception Images -->
+      <div class="gallery-item" data-category="reception">
+        <img
+          src="https://images.unsplash.com/photo-1600431521340-491eca880813?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
+          alt="Grand Reception"
+        />
+        <div class="gallery-overlay">
+          <h3>Grand Reception</h3>
+          <p>Goa | 2024</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="reception">
+        <img
+          src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+          alt="Garden Party"
+        />
+        <div class="gallery-overlay">
+          <h3>Garden Party</h3>
+          <p>Mumbai | 2023</p>
+        </div>
+      </div>
+
+      <!-- Engagement Images -->
+      <div class="gallery-item" data-category="engagement">
+        <img
+          src="https://images.unsplash.com/photo-1605723517597-8b4b6f3c8a0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+          alt="Sunset Proposal"
+        />
+        <div class="gallery-overlay">
+          <h3>Sunset Proposal</h3>
+          <p>Goa | 2024</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="engagement">
+        <img
+          src="https://images.unsplash.com/photo-1542042161784-26ab9e041e89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+          alt="Rooftop Engagement"
+        />
+        <div class="gallery-overlay">
+          <h3>Rooftop Engagement</h3>
+          <p>Bangalore | 2023</p>
+        </div>
+      </div>
+
+      <!-- Decor Images -->
+      <div class="gallery-item" data-category="decor">
+        <img
+          src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+          alt="Floral Mandap"
+        />
+        <div class="gallery-overlay">
+          <h3>Floral Mandap</h3>
+          <p>Goa | 2024</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="decor">
+        <img
+          src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
+          alt="Table Setting"
+        />
+        <div class="gallery-overlay">
+          <h3>Elegant Table Setting</h3>
+          <p>Karwar | 2023</p>
+        </div>
+      </div>
+
+      <!-- Additional Images -->
+      <div class="gallery-item" data-category="wedding">
+        <img
+          src="https://images.unsplash.com/photo-1583939003579-730e3915a78c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+          alt="Bridal Entrance"
+        />
+        <div class="gallery-overlay">
+          <h3>Bridal Entrance</h3>
+          <p>Goa | 2024</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="reception">
+        <img
+          src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
+          alt="Reception Decor"
+        />
+        <div class="gallery-overlay">
+          <h3>Reception Decor</h3>
+          <p>Mumbai | 2023</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="engagement">
+        <img
+          src="https://images.unsplash.com/photo-1581833971351-1d9e0d8a9e3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+          alt="Romantic Setup"
+        />
+        <div class="gallery-overlay">
+          <h3>Romantic Setup</h3>
+          <p>Goa | 2024</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="decor">
+        <img
+          src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+          alt="Floral Arch"
+        />
+        <div class="gallery-overlay">
+          <h3>Floral Arch</h3>
+          <p>Karwar | 2023</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+      <div class="lightbox-close">&times;</div>
+      <div class="lightbox-nav lightbox-prev">
+        <i class="fas fa-chevron-left"></i>
+      </div>
+      <div class="lightbox-content">
+        <img src="" alt="" />
+        <div class="lightbox-caption"></div>
+      </div>
+      <div class="lightbox-nav lightbox-next">
+        <i class="fas fa-chevron-right"></i>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+
+    <style>
+      /* CTA Section */
+      .cta-section {
+        background: url("https://www.italiandreamweddings.it/files/fotoSlide/35.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        padding: 100px 20px;
+        text-align: center;
+        color: white;
+        position: relative;
+      }
+
+      .cta-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1;
+      }
+
+      .cta-content {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        animation: fadeIn 1s ease;
+      }
+
+      .cta-content h2 {
+        font-family: var(--font-heading);
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        letter-spacing: 1px;
+      }
+
+      .cta-content p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 300;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 15px 35px;
+        font-family: var(--font-secondary);
+        font-weight: 600;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border: none;
+      }
+
+      .btn-primary {
+        background-color: var(--accent-dark);
+        color: white;
+        border: 2px solid var(--accent-dark);
+      }
+
+      .btn-primary:hover {
+        background-color: white;
+        color: var(--accent-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 25px rgba(140, 90, 96, 0.3);
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .cta-section {
+          padding: 80px 20px;
+        }
+
+        .cta-content h2 {
+          font-size: 2.5rem;
+        }
+
+        .cta-content p {
+          font-size: 1rem;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .cta-buttons .btn {
+          width: 100%;
+          max-width: 250px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .cta-content h2 {
+          font-size: 2rem;
+        }
+      }
+
+      /* Animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2>Begin Your Journey</h2>
+        <p>
+          Let us transform your vision into a breathtaking reality. Contact us
+          today to schedule a consultation and start planning the celebration of
+          your dreams.
+        </p>
+
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <img
+        src="pngwing.com (5).png"
+        alt="Floral decoration"
+        class="footer-floral footer-floral-1"
+      />
+      <img
+        src="pngwing.com (6).png"
+        alt="Floral decoration"
+        class="footer-floral footer-floral-2"
+      />
+
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo">KRIZA</div>
+          <p>
+            Creating unforgettable weddings and events with passion and
+            attention to detail. Specializing in luxury celebrations across
+            India & beyond
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+            <a href="#" class="social-link"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-container">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-services">
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-links">
+            <li><a href="#">Wedding Planning</a></li>
+            <li><a href="#">Event Design</a></li>
+            <li><a href="#">Destination Weddings</a></li>
+            <li><a href="#">Floral Design</a></li>
+            <li><a href="#">Full Coordination</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3 class="footer-heading">Contact Us</h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i>Goa & Karwar (Available
+            Pan-India)
+          </p>
+          <p><i class="fas fa-phone"></i> +91 63604 79875</p>
+          <p><i class="fas fa-envelope"></i> fromheaven.kriza@gmail.com</p>
+          <p><i class="fab fa-instagram"></i> @fromheaven_events_bykriza</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 From Heaven Events By Kriza. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+
+      // Gallery Filtering
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const galleryItems = document.querySelectorAll(".gallery-item");
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          // Update active button
+          filterButtons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+
+          const filter = button.dataset.filter;
+
+          // Filter items
+          galleryItems.forEach((item) => {
+            if (filter === "all" || item.dataset.category === filter) {
+              item.style.display = "block";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // Lightbox functionality
+      const lightbox = document.querySelector(".lightbox");
+      const lightboxImg = document.querySelector(".lightbox-content img");
+      const lightboxCaption = document.querySelector(".lightbox-caption");
+      const lightboxClose = document.querySelector(".lightbox-close");
+      const lightboxPrev = document.querySelector(".lightbox-prev");
+      const lightboxNext = document.querySelector(".lightbox-next");
+
+      let currentIndex = 0;
+      const galleryImages = Array.from(
+        document.querySelectorAll(".gallery-item img")
+      );
+      const galleryCaptions = Array.from(
+        document.querySelectorAll(".gallery-overlay")
+      );
+
+      // Open lightbox
+      galleryItems.forEach((item, index) => {
+        item.addEventListener("click", () => {
+          currentIndex = index;
+          updateLightbox();
+          lightbox.classList.add("active");
+          document.body.style.overflow = "hidden";
+        });
+      });
+
+      // Close lightbox
+      lightboxClose.addEventListener("click", () => {
+        lightbox.classList.remove("active");
+        document.body.style.overflow = "";
+      });
+
+      // Close when clicking outside image
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+      });
+
+      // Navigation
+      lightboxPrev.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentIndex =
+          (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        updateLightbox();
+      });
+
+      lightboxNext.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        updateLightbox();
+      });
+
+      // Keyboard navigation
+      document.addEventListener("keydown", (e) => {
+        if (!lightbox.classList.contains("active")) return;
+
+        if (e.key === "Escape") {
+          lightbox.classList.remove("active");
+          document.body.style.overflow = "";
+        } else if (e.key === "ArrowLeft") {
+          currentIndex =
+            (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+          updateLightbox();
+        } else if (e.key === "ArrowRight") {
+          currentIndex = (currentIndex + 1) % galleryImages.length;
+          updateLightbox();
+        }
+      });
+
+      function updateLightbox() {
+        lightboxImg.src = galleryImages[currentIndex].src;
+        lightboxCaption.innerHTML = galleryCaptions[currentIndex].innerHTML;
+      }
+
+      // Simple animations
+      document.addEventListener("DOMContentLoaded", () => {
+        // Animate gallery items on scroll
+        const galleryItems = document.querySelectorAll(".gallery-item");
+
+        galleryItems.forEach((item, index) => {
+          item.style.opacity = "0";
+          item.style.transform = "translateY(30px)";
+
+          setTimeout(() => {
+            item.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+            item.style.opacity = "1";
+            item.style.transform = "translateY(0)";
+          }, 150 + index * 100);
+        });
+      });
+    </script>
+  </body>
+</html>

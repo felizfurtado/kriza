@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium Services | From Heaven Events by Kriza</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Mulish:wght@400;500&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Global Styles */
+      :root {
+        --bg-color: #f2e9eb;
+        --text-color: #545748;
+        --accent-color: #d88c96;
+        --accent-dark: #8c5a60;
+        --leaf-color: #647a6e;
+        --accent-light: #f7e5e8;
+        --leaf-color: #647a6e;
+        --gold: #c6a972;
+        --font-heading: "Playfair Display", serif;
+        --font-body: "Mulish", sans-serif;
+        --font-title: "Great Vibes", cursive;
+        --font-secondary: "Montserrat", sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-secondary);
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .section-title {
+        font-family: var(--font-title);
+        font-size: 3.5rem;
+        color: var(--accent-dark);
+        text-align: center;
+        margin-bottom: 1.5rem;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--accent-color),
+          transparent
+        );
+        margin: 15px auto 0;
+      }
+
+      .section-subtitle {
+        font-size: 1.2rem;
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 60px;
+        color: #777;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 14px 32px;
+        background: var(--accent-dark);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+        border: 2px solid var(--accent-dark);
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background: transparent;
+        color: var(--accent-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--accent-dark);
+        border: 2px solid var(--accent-dark);
+      }
+
+      .btn-outline:hover {
+        background: var(--accent-dark);
+        color: white;
+      }
+
+      /* Navigation Styles */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        border-bottom: 1px solid #eae7df;
+        position: sticky;
+        top: 0;
+        background-color: var(--bg-color);
+        z-index: 100;
+        flex-wrap: wrap;
+      }
+
+      .nav-group {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: var(--text-color);
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--accent-color);
+      }
+
+      .logo {
+        font-family: var(--font-heading);
+        font-size: 28px;
+        letter-spacing: 2px;
+        order: 2;
+        color: var(--accent-dark);
+      }
+
+      .hamburger {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        order: 1;
+      }
+
+      .nav-left {
+        order: 1;
+      }
+
+      .nav-right {
+        order: 3;
+      }
+
+
+      /* Hero Section */
+      .service-hero {
+        height: 85vh;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-bottom: 100px;
+      }
+
+      .service-hero-content {
+        text-align: center;
+        color: var(--accent-dark);
+        padding: 0 20px;
+        max-width: 900px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .service-hero-content h1 {
+        font-family: var(--font-title);
+        font-size: 5.5rem;
+        margin-bottom: 1rem;
+        letter-spacing: 3px;
+      }
+
+      .service-hero-content p {
+        font-size: 1.3rem;
+        line-height: 1.8;
+        max-width: 700px;
+        margin: 0 auto 40px;
+        font-weight: 300;
+      }
+
+      .hero-divider {
+        width: 150px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.5);
+        margin: 30px auto;
+      }
+
+      /* Service Intro */
+      .service-intro {
+        padding: 0 20px 80px;
+        text-align: center;
+      }
+
+      .service-intro p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto 2.5rem;
+      }
+
+      .divider {
+        width: 150px;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--accent-color),
+          transparent
+        );
+        margin: 0 auto 40px;
+      }
+
+      /* Service Packages - Premium Redesign */
+      .packages-container {
+        padding: 50px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* .packages-container::before {
+        content: "";
+        position: absolute;
+        top: -100px;
+        left: 0;
+        right: 0;
+        height: 200px;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23fcf9f6" fill-opacity="1" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,261.3C672,256,768,224,864,197.3C960,171,1056,149,1152,149.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat center/cover;
+        z-index: 1;
+      } */
+
+      .packages {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .package-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 15px 50px rgba(140, 90, 96, 0.12);
+        flex: 1;
+        min-width: 300px;
+        max-width: 370px;
+        transition: all 0.4s ease;
+        position: relative;
+        z-index: 1;
+        border: 1px solid rgba(216, 140, 150, 0.15);
+        transform: translateY(0);
+      }
+
+      .package-card:hover {
+        transform: translateY(-20px);
+        box-shadow: 0 25px 60px rgba(140, 90, 96, 0.2);
+        z-index: 10;
+      }
+
+      .package-card.featured {
+        transform: scale(1.05);
+        box-shadow: 0 25px 60px rgba(140, 90, 96, 0.25);
+        z-index: 5;
+      }
+
+      .package-card.featured:hover {
+        transform: scale(1.05) translateY(-10px);
+      }
+
+      .package-card.featured::before {
+        content: "MOST POPULAR";
+        position: absolute;
+        top: 25px;
+        right: -50px;
+        background: var(--gold);
+        color: white;
+        padding: 8px 40px;
+        font-size: 12px;
+        font-weight: 600;
+        transform: rotate(45deg);
+        letter-spacing: px;
+        z-index: 10;
+      }
+
+      .package-header {
+        padding: 30px 30px 20px;
+        background: linear-gradient(135deg, var(--accent-light), white);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .package-header::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--gold), var(--accent-color));
+      }
+
+      .package-content h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        color: var(--accent-dark);
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      .package-price {
+        font-size: 2.5rem;
+        color: var(--accent-dark);
+        margin: 20px 0;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+      }
+
+      .package-price::before {
+        content: "Starting at";
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.9rem;
+        color: #888;
+        font-weight: normal;
+      }
+
+      .package-price span {
+        font-size: 1.2rem;
+        vertical-align: super;
+      }
+
+      .package-features {
+        list-style: none;
+        margin: 30px 0;
+        padding: 0 30px;
+      }
+
+      .package-features li {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(216, 140, 150, 0.1);
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease;
+      }
+
+      .package-features li:hover {
+        background: rgba(247, 229, 232, 0.3);
+        padding-left: 10px;
+      }
+
+      .package-features li:last-child {
+        border-bottom: none;
+      }
+
+      .package-features li i {
+        color: var(--accent-color);
+        margin-right: 15px;
+        font-size: 1.1rem;
+        min-width: 20px;
+      }
+
+      .package-cta {
+        padding: 0 30px 35px;
+      }
+
+      .package-btn {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        background: var(--accent-dark);
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+        border: 2px solid var(--accent-dark);
+      }
+
+      .package-btn:hover {
+        background: transparent;
+        color: var(--accent-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Custom Services */
+      .custom-services {
+        padding: 100px 0;
+        position: relative;
+      }
+
+      .custom-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 60px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .custom-content {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .custom-content h2 {
+        font-family: var(--font-title);
+        font-size: 3.5rem;
+        color: var(--accent-dark);
+        margin-bottom: 1.5rem;
+      }
+
+      .custom-content p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+      }
+
+      .custom-list {
+        list-style: none;
+        margin-bottom: 2rem;
+      }
+
+      .custom-list li {
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(216, 140, 150, 0.1);
+        display: flex;
+        align-items: center;
+        font-size: 1.1rem;
+      }
+
+      .custom-list li:last-child {
+        border-bottom: none;
+      }
+
+      .custom-list li i {
+        color: var(--accent-color);
+        margin-right: 15px;
+        font-size: 1.3rem;
+        min-width: 25px;
+      }
+
+      .custom-image {
+        flex: 1;
+        min-width: 300px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        transition: all 0.4s ease;
+        /* transform: rotate(-1deg); */
+      }
+
+      /* .custom-image:hover {
+        transform: rotate(0) scale(1.02);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+      } */
+
+      .custom-image img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        display: block;
+        /* transition: transform 0.5s ease; */
+      }
+
+      .custom-image:hover img {
+        transform: scale(1.05);
+      }
+
+      /* Process Section */
+      .process-section {
+        padding: 20px 0;
+        /* background: linear-gradient(to bottom, #fff, #fcf9f6); */
+        position: relative;
+      }
+
+      .process-steps {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+      }
+
+      .process-step {
+        flex: 1;
+        min-width: 250px;
+        max-width: 270px;
+        text-align: center;
+        position: relative;
+        padding: 40px 25px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+        z-index: 1;
+      }
+
+      .process-step:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        z-index: 2;
+      }
+
+      .process-number {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(
+          135deg,
+          var(--accent-color),
+          var(--accent-dark)
+        );
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 0 auto 25px;
+        position: relative;
+        z-index: 2;
+        box-shadow: 0 5px 15px rgba(216, 140, 150, 0.3);
+      }
+
+      .process-step h3 {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        color: var(--accent-dark);
+        margin-bottom: 15px;
+      }
+
+      .process-step p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #777;
+      }
+
+      /* FAQ Section */
+      .faq-section {
+        padding: 100px 0;
+        /* background: url('https://images.unsplash.com/photo-1527525443983-6e60c75fff46?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed; */
+        position: relative;
+      }
+
+      .faq-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /* background: rgba(255, 255, 255, 0.92); */
+      }
+
+      .faq-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      .faq-item {
+        border-bottom: 1px solid rgba(216, 140, 150, 0.2);
+        margin-bottom: 15px;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .faq-item:hover {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq-question {
+        padding: 25px 30px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: var(--font-heading);
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--accent-dark);
+        transition: all 0.3s ease;
+      }
+
+      .faq-question:hover {
+        background: rgba(247, 229, 232, 0.3);
+      }
+
+      .faq-question i {
+        transition: transform 0.3s ease;
+        color: var(--accent-color);
+      }
+
+      .faq-answer {
+        padding: 0 30px;
+        max-height: 0;
+        overflow: hidden;
+        font-size: 1rem;
+        line-height: 1.8;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 300px;
+        padding: 0 30px 25px;
+      }
+
+      .faq-item.active .faq-question i {
+        transform: rotate(180deg);
+      }
+
+      /* CTA Section */
+
+ 
+      .cta-section {
+        background: url("https://www.italiandreamweddings.it/files/fotoSlide/35.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        padding: 60px 20px;
+        text-align: center;
+        color: white;
+        position: relative;
+      }
+
+           .cta-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.7
+        ); /* dark layer (adjust opacity if needed) */
+        z-index: 3;
+      }
+
+      .cta-content {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 4;
+        animation: fadeIn 1s ease;
+      }
+
+      .cta-content h2 {
+        font-family: var(--font-heading);
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        letter-spacing: 1px;
+      }
+
+      .cta-content p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 300;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background-color: #2f3a35;
+        color: #fff;
+        padding: 80px 20px 30px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+      }
+
+      .footer-logo {
+        font-family: var(--font-heading);
+        font-size: 28px;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+      }
+
+      .footer-about p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-link {
+        color: #fff;
+        font-size: 18px;
+        transition: color 0.3s ease;
+      }
+
+      .social-link:hover {
+        color: var(--accent-color);
+      }
+
+      .footer-heading {
+        font-family: var(--font-heading);
+        font-size: 18px;
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 12px;
+      }
+
+      .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 15px;
+      }
+
+      .footer-links a:hover {
+        color: var(--accent-color);
+      }
+
+      .footer-contact p {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 15px;
+      }
+
+      .footer-contact i {
+        margin-right: 10px;
+        color: var(--accent-color);
+        width: 20px;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 40px;
+        margin-top: 40px;
+        border-top: 1px solid #444;
+        font-size: 14px;
+        color: #fff;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 1024px) {
+        .process-steps {
+          gap: 20px;
+        }
+
+        .custom-container {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .custom-list li {
+          justify-content: center;
+        }
+
+        .package-card.featured {
+          transform: scale(1);
+        }
+
+        .package-card.featured:hover {
+          transform: translateY(-10px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          padding: 15px 20px;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .logo {
+          order: 2;
+          margin: 0 auto;
+          padding: 10px 0;
+          font-size: 22px;
+        }
+
+        .hamburger {
+          display: block;
+          order: 1;
+          z-index: 20;
+        }
+
+
+
+        .nav-group {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background-color: var(--bg-color);
+          flex-direction: column;
+          justify-content: center;
+          gap: 30px;
+          transform: translateY(-100%);
+          transition: transform 0.3s ease-in-out;
+          z-index: 10;
+          padding-top: 80px;
+        }
+
+        .nav-group.show {
+          transform: translateY(0);
+        }
+
+        .nav-left,
+        .nav-right {
+          display: flex;
+        }
+
+        .custom-image {
+    padding: 15px;
+  }
+
+        .nav-right {
+          display: none;
+        }
+
+        .nav-left {
+          flex-direction: column;
+        }
+
+        .nav-left .nav-link {
+          font-size: 18px;
+          padding: 10px 0;
+        }
+
+        .service-hero-content h1 {
+          font-size: 3.5rem;
+        }
+
+        .section-title {
+          font-size: 3rem;
+        }
+
+        .cta-content h2 {
+          font-size: 2.5rem;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .package-card.featured::before {
+          right: -30px;
+          padding: 6px 30px;
+          font-size: 11px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .service-hero-content h1 {
+          font-size: 2.8rem;
+        }
+
+        .section-title {
+          font-size: 2.5rem;
+        }
+
+        .service-hero-content p,
+        .section-subtitle,
+        .cta-content p {
+          font-size: 1rem;
+        }
+
+        .package-price {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="navbar">
+      <style>
+        .hha {
+          display: none;
+        }
+
+        /* Show only on mobile */
+        @media (max-width: 768px) {
+          .hha {
+            display: inline-block;
+          }
+        }
+      </style>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars" id="menuIcon"></i>
+        <i class="fa-solid fa-xmark" id="closeIcon" style="display: none"></i>
+      </div>
+
+      <div class="nav-group nav-left">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="portfolio.html" class="nav-link hha">Portfolio</a>
+        <a href="gallery.html" class="nav-link hha">Gallery</a>
+        <a href="contact.html" class="nav-link hha">Contact</a>
+      </div>
+
+      <div class="logo">KRIZA</div>
+
+      <div class="nav-group nav-right">
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <script>
+        function toggleMenu() {
+          const navLeft = document.querySelector(".nav-left");
+          const body = document.body;
+          const menuIcon = document.getElementById("menuIcon");
+          const closeIcon = document.getElementById("closeIcon");
+
+          navLeft.classList.toggle("show");
+
+          if (navLeft.classList.contains("show")) {
+            body.style.overflow = "hidden";
+            menuIcon.style.display = "none";
+            closeIcon.style.display = "block";
+          } else {
+            body.style.overflow = "";
+            menuIcon.style.display = "block";
+            closeIcon.style.display = "none";
+          }
+        }
+      </script>
+    </div>
+
+    <!-- Service Hero Section -->
+    <!-- <section class="service-hero">
+      <div class="service-hero-content">
+        <h1>Crafted With Elegance</h1>
+        <div class="hero-divider"></div>
+        <p>Creating unforgettable celebrations with bespoke elegance and flawless execution across Goa, Karwar & beyond</p>
+        <a href="#packages" class="btn btn-outline">Discover Our Offerings</a>
+      </div>
+    </section> -->
+
+    <!-- Service Intro -->
+    <!-- <section class="service-intro container">
+      <h2 class="section-title">Signature Experiences</h2>
+      <p>At From Heaven Events by Kriza, we transform your vision into reality with our comprehensive range of wedding and event services. Each celebration is crafted with meticulous attention to detail and infused with elegance, emotion, and magic.</p>
+      <p>Whether you're dreaming of an intimate beach ceremony or a grand palace wedding, our team is dedicated to creating an unforgettable experience that reflects your unique love story.</p>
+    </section> -->
+
+    <!-- Service Packages -->
+<!-- Packages Section -->
+<section class="packages-container" id="packages">
+  <div class="container">
+    <h2 class="section-title">Our Signature Packages</h2>
+    <p class="section-subtitle">
+      Curated offerings to suit every celebration — big or intimate
+    </p>
+
+    <div class="packages">
+      <!-- Package 1 -->
+      <div class="package-card">
+        <div class="package-header">
+          <div class="package-content">
+            <h3>Serene Soirée</h3>
+            <div class="package-price">₹1,80,000<span>*</span></div>
+          </div>
+        </div>
+        <ul class="package-features">
+          <li><i class="fas fa-check"></i> Vision planning session</li>
+          <li><i class="fas fa-check"></i> Venue decor styling</li>
+          <li><i class="fas fa-check"></i> Day-of coordination</li>
+          <li><i class="fas fa-check"></i> Fresh floral elements</li>
+          <li><i class="fas fa-check"></i> Professional photography (6 hrs)</li>
+        </ul>
+        <div class="package-cta">
+          <a href="#" class="package-btn">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Package 2 -->
+      <div class="package-card featured">
+        <div class="package-header">
+          <div class="package-content">
+            <h3>Divine Union</h3>
+            <div class="package-price">₹3,50,000<span>*</span></div>
+          </div>
+        </div>
+        <ul class="package-features">
+          <li><i class="fas fa-check"></i> End-to-end event planning</li>
+          <li><i class="fas fa-check"></i> Venue styling + logistics</li>
+          <li><i class="fas fa-check"></i> Signature floral design</li>
+          <li><i class="fas fa-check"></i> Photo & video coverage (10 hrs)</li>
+          <li><i class="fas fa-check"></i> Food & vendor coordination</li>
+          <li><i class="fas fa-check"></i> Themed invitation design</li>
+        </ul>
+        <div class="package-cta">
+          <a href="#" class="package-btn">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Package 3 -->
+      <div class="package-card">
+        <div class="package-header">
+          <div class="package-content">
+            <h3>Heavenly Grandeur</h3>
+            <div class="package-price">₹6,50,000<span>*</span></div>
+          </div>
+        </div>
+        <ul class="package-features">
+          <li><i class="fas fa-check"></i> Ultra-luxury event planning</li>
+          <li><i class="fas fa-check"></i> Destination wedding setup</li>
+          <li><i class="fas fa-check"></i> Premium floral & decor styling</li>
+          <li><i class="fas fa-check"></i> Full photo + cinematic video</li>
+          <li><i class="fas fa-check"></i> Celebrity entertainment options</li>
+          <li><i class="fas fa-check"></i> Bridal beauty & styling</li>
+          <li><i class="fas fa-check"></i> Full multi-day coordination</li>
+        </ul>
+        <div class="package-cta">
+          <a href="#" class="package-btn">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Custom Services -->
+<section class="custom-services container">
+  <div class="custom-container">
+    <div class="custom-content">
+      <h2 class="section-title">Tailored Celebrations</h2>
+      <p>
+        No two love stories are the same — and neither are our events. We offer fully personalized services to bring your unique vision to life.
+      </p>
+
+      <ul class="custom-list">
+        <li><i class="fas fa-crown"></i> Custom decor and theme design</li>
+        <li><i class="fas fa-palette"></i> Mood boards and aesthetic planning</li>
+        <li><i class="fas fa-map-marked-alt"></i> Scenic destination expertise</li>
+        <li><i class="fas fa-globe-asia"></i> Traditional and cross-cultural rituals</li>
+        <li><i class="fas fa-gem"></i> Bespoke bridal styling experiences</li>
+      </ul>
+
+      <p>
+        From dream boards to your big day — we take the time to understand your style, culture, and story to create magic that feels truly "you."
+      </p>
+
+      <a href="contact.html" class="btn">Request Custom Quote</a>
+    </div>
+
+    <div class="custom-image">
+      <img
+        src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+        alt="Custom Wedding Design"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- Process Section -->
+<section class="process-section">
+  <div class="container">
+    <h2 class="section-title">How We Work</h2>
+    <p class="section-subtitle">
+      From first call to final sparkler send-off — we’re with you every step of the way
+    </p>
+
+    <div class="process-steps">
+      <!-- Step 1 -->
+      <div class="process-step">
+        <div class="process-number">1</div>
+        <h3>Connect</h3>
+        <p>
+          We start with a friendly consultation to understand your vision, vibe, and values.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="process-step">
+        <div class="process-number">2</div>
+        <h3>Create</h3>
+        <p>
+          Our design team crafts a personalized plan, mood board, and concept — just for you.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="process-step">
+        <div class="process-number">3</div>
+        <h3>Coordinate</h3>
+        <p>
+          We handle logistics, vendor meetings, timelines, and rehearsal plans so you're stress-free.
+        </p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="process-step">
+        <div class="process-number">4</div>
+        <h3>Celebrate</h3>
+        <p>
+          Sit back, smile, and soak it all in — we bring everything together flawlessly on the big day.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+  <div class="container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-subtitle">
+      Here’s what most couples ask us (you might be wondering the same!)
+    </p>
+
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">
+          How early should we book our event?
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          Ideally, 9-12 months in advance for weddings — especially during peak season (Nov–Feb). But we also pull off stunning events in shorter timelines. Don’t hesitate to reach out!
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Do you plan destination weddings?
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          100%! Goa and Karwar are our home turf, but we've styled events across India. We also offer remote planning for couples living abroad or in other cities.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Can I customize a package?
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          Absolutely. All packages are flexible. Add what you love, skip what you don’t. We’ll create a personalized quote after our initial chat.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Which locations do you serve?
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          We’re based in Goa and Karwar, but love working in Bangalore, Mumbai, and all over India. Need help somewhere else? Let’s chat about travel options!
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2>Begin Your Journey</h2>
+        <p>
+          Let us transform your vision into a breathtaking reality. Contact us
+          today to schedule a consultation and start planning the celebration of
+          your dreams.
+        </p>
+
+        <div class="cta-buttons">
+          <style>
+            .btn-primary:hover {
+              background-color: white;
+              color: var(--accent-dark);
+            }
+          </style>
+          <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+          <!-- <a href="portfolio.html" class="btn btn-outline">View Our Portfolio</a> -->
+        </div>
+      </div>
+    </section>
+
+
+    <style>
+      .footer-floral {
+        position: absolute;
+        opacity: 0.1;
+        z-index: 1;
+      }
+
+      .footer-floral-1 {
+        width: 300px;
+        top: 50px;
+        left: -100px;
+        transform: rotate(-25deg);
+      }
+
+      .footer-floral-2 {
+        width: 250px;
+        bottom: 50px;
+        right: -80px;
+        transform: rotate(25deg);
+      }
+    </style>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <img
+        src="pngwing.com (5).png"
+        alt="Floral decoration"
+        class="footer-floral footer-floral-1"
+      />
+      <img
+        src="pngwing.com (6).png"
+        alt="Floral decoration"
+        class="footer-floral footer-floral-2"
+      />
+
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo">KRIZA</div>
+          <p>
+            Creating unforgettable weddings and events with passion and
+            attention to detail. Specializing in luxury celebrations across
+            India & beyond
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+            <a href="#" class="social-link"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-container">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-services">
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-links">
+            <li><a href="#">Wedding Planning</a></li>
+            <li><a href="#">Event Design</a></li>
+            <li><a href="#">Destination Weddings</a></li>
+            <li><a href="#">Floral Design</a></li>
+            <li><a href="#">Full Coordination</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3 class="footer-heading">Contact Us</h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i>Goa & Karwar (Available
+            Pan-India)
+          </p>
+          <p><i class="fas fa-phone"></i> +91 63604 79875</p>
+          <p><i class="fas fa-envelope"></i> fromheaven.kriza@gmail.com</p>
+          <p><i class="fab fa-instagram"></i> @fromheaven_events_bykriza</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 From Heaven Events By Kriza. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile Menu Toggle
+   
+
+      // FAQ Accordion
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          const faqItem = question.parentElement;
+          faqItem.classList.toggle("active");
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Animation on scroll
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.2,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animated");
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(".package-card, .process-step, .custom-image")
+        .forEach((el) => {
+          observer.observe(el);
+        });
+    </script>
+  </body>
+</html>
